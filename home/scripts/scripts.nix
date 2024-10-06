@@ -1,5 +1,5 @@
 {pkgs, ...}: let
-  wall-change = pkgs.writeShellScriptBin "wall-change" (builtins.readFile ./scripts/wall-change.sh);
+  # wall-change = pkgs.writeShellScriptBin "wall-change" (builtins.readFile ./scripts/wall-change.sh);
   wallpaper-picker = pkgs.writeShellScriptBin "wallpaper-picker" (builtins.readFile ./scripts/wallpaper-picker.sh);
   
   runbg = pkgs.writeShellScriptBin "runbg" (builtins.readFile ./scripts/runbg.sh);
@@ -28,9 +28,12 @@
   
   rofi-power-menu = pkgs.writeScriptBin "rofi-power-menu" (builtins.readFile ./scripts/rofi-power-menu.sh);
   power-menu = pkgs.writeScriptBin "power-menu" (builtins.readFile ./scripts/power-menu.sh);
+  
+  nixos-rebuild-and-push = pkgs.writeScriptBin "nixos-rebuild-and-push" (builtins.readFile ./scripts/wall-change.sh);
+  
 in {
   home.packages = with pkgs; [
-    wall-change
+    # wall-change
     wallpaper-picker
     
     runbg
@@ -59,5 +62,7 @@ in {
 
     rofi-power-menu
     power-menu
+    git # my custom script
+    nixos-rebuild-and-push
   ];
 }
