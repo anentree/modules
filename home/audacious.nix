@@ -1,0 +1,107 @@
+{ config, lib, pkgs, ... }:
+
+{
+  # libinput ------------------------------------
+  environment.systemPackages = with pkgs; [
+    libinput-gestures
+  ];
+
+  users.users.neo.extraGroups = [ "input" ];
+  systemd.user.services.libinput-gestures.enable = true;
+  services.xserver.libinput.enable = true;
+
+  # Enable the libinput-gestures service
+  systemd.user.services.libinput-gestures = {
+    description = "LibInput Gestures";
+    wantedBy = [ "graphical-session.target" ];
+    partOf = [ "graphical-session.target" ];
+    serviceConfig = {
+      ExecStart = "${pkgs.libinput-gestures}/bin/libinput-gestures";
+      Restart = "always";
+    };
+  };
+  
+  environment.etc."libinput-gestures.conf".text = ''
+  # Swipe up with 3 fingers to show rofi app launcher
+  gesture swipe up 3 hyprctl dispatch exec "rofi -show drun"
+
+  # Swipe down with 3 fingers to show rofi window switcher
+  gesture swipe down 3 hyprctl dispatch exec "rofi -show window"
+'';
+
+  # swayosd ------------------------------------
+  home.packages = with pkgs; [ swayosd ];
+
+  wayland.windowManager.hyprland = {
+    settings = {
+      exec-once = [
+        "swayosd-server"
+      ];
+
+      bind = [
+        ",XF86AudioMute, exec, swayosd-client --output-volume mute-toggle"
+      ];
+      # binds active in lockscreen
+      bindl = [
+        ",XF86MonBrightnessUp, exec, swayosd-client --brightness raise 5%+"
+        ",XF86MonBrightnessDown, exec, swayosd-client --brightness lower 5%-"
+        "$mainMod, XF86MonBrightnessUp, exec, brightnessctl set 100%"
+        "$mainMod, XF86MonBrightnessDown, exec, brightnessctl set 0%"
+      ];
+      bindle = [
+        ",XF86AudioRaiseVolume, exec, swayosd-client --output-volume +2 --max-volume=100"
+        ",XF86AudioLowerVolume, exec, swayosd-client --output-volume -2"
+
+        "$mainMod, f11, exec, swayosd-client --output-volume +2 --max-volume=100"
+        "$mainMod, f12, exec, swayosd-client --output-volume -2"
+      ];
+      bindr = [
+        "CAPS,Caps_Lock,exec,swayosd-client --caps-lock"
+        ",Scroll_Lock,exec,swayosd-client --scroll-lock"
+        ",Num_Lock,exec,swayosd-client --num-lock"
+      ];
+    };
+  };
+
+  xdg.configFile."swayosd/style.css".text = ''
+    window {
+        padding: 0px 10px;
+        border-radius: 30px;
+        border: 10px;
+        background: alpha(#111111, 0.99);
+    }
+
+    #container {
+        margin: 15px;
+    }
+
+    image, label {
+        color: #FBF1C7;
+    }
+
+    progressbar:disabled,
+    image:disabled {
+        opacity: 0.95;
+    }
+
+    progressbar {
+        min-height: 6px;
+        border-radius: 999px;
+        background: transparent;
+        border: none;
+    }
+    trough {
+        min-height: inherit;
+        border-radius: inherit;
+        border: none;
+        background: alpha(#CCCCCC, 0.1);
+    }
+    progress {
+        min-height: inherit;
+        border-radius: inherit;
+        border: none;
+        background: #FBF1C7;
+    }
+  '';
+}
+
