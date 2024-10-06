@@ -28,9 +28,7 @@
     ++ [(import ./swaync/swaync.nix)]             # notification deamon
     ++ [(import ./vscodium.nix)]                  # vscode forck
     ++ [(import ./waybar)]                        # status bar
-    ++ [(import ./xdg-mimes.nix)]                 # xdg config
-    ++ (if (host == "desktop") 
-        then [(import ./zsh)]
-        else [(import ./zsh.nix)]);
+    ++ [(import ./xdg-mimes.nix)];                 # xdg config
+    # ++ [(import ./zsh.nix)];
 
 }
