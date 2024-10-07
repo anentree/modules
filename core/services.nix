@@ -8,7 +8,7 @@
     flatpak.enable = true;
     printing = {
       enable = true;
-      drivers = [ pkgs.brlaser pkgs.brgenml1lpr pkgs.brgenml1cupswrapper ];
+      drivers = [ pkgs.hplipWithPlugin ];
     };
     avahi = { # for printing and scanning
       enable = true;
