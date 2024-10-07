@@ -152,7 +152,7 @@
         "$mainMod, J, togglesplit,"
         "$mainMod, M, exec, qalculate-gtk"
         "$mainMod, N, exec, swaync-client -t -sw"
-        "$mainMod, O, exec, thunderbird"
+        "$mainMod, O, togglespecialworkspace, thunderbird"
         "$mainMod SHIFT, O, exec, toggle_oppacity"
         "$mainMod, P, pseudo,"
         "$mainMod, Q, killactive,"
