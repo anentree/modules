@@ -18,6 +18,10 @@
   environment.systemPackages = with pkgs; [
     wget
     git
+    # for printing and cups
+       cups
+       cups-filters
+       ghostscript
   ];
 
   time.timeZone = "America/Chicago";

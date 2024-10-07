@@ -13,6 +13,7 @@
     avahi = { # for printing and scanning
       enable = true;
       nssmdns4 = true;
+      openFirewall = true;
     };
     keyd = {
       enable = true;

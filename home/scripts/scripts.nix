@@ -29,11 +29,18 @@
   rofi-power-menu = pkgs.writeScriptBin "rofi-power-menu" (builtins.readFile ./scripts/rofi-power-menu.sh);
   power-menu = pkgs.writeScriptBin "power-menu" (builtins.readFile ./scripts/power-menu.sh);
   
-  nixos-rebuild-and-push = pkgs.writeScriptBin "nixos-rebuild-and-push" (builtins.readFile ./scripts/wall-change.sh);
+  # nixos-rebuild-and-push = pkgs.writeScriptBin "nixos-rebuild-and-push" (builtins.readFile ./scripts/wall-change.sh);
+  # resize-sws = pkgs.writeScriptBin "resize-sws" (builtins.readFile ./scripts/wall-change.sh);
+  wall_change_script = pkgs.writeScriptBin "wall-change" (builtins.readFile ./scripts/wall-change.sh);
+  nixos_rebuild_and_push = pkgs.writeScriptBin "nixos-rebuild-and-push" ''
+    exec ${wall_change_script}/bin/wall-change nixos-rebuild-and-push "$@"
+  '';
+  resize_sws = pkgs.writeScriptBin "resize-sws" ''
+    exec ${wall_change_script}/bin/wall-change resize-sws
+  '';
   
 in {
   home.packages = with pkgs; [
-    # wall-change
     wallpaper-picker
     
     runbg
@@ -62,7 +69,8 @@ in {
 
     rofi-power-menu
     power-menu
-    git # my custom script
-    nixos-rebuild-and-push
+    wall_change_script
+    nixos_rebuild_and_push
+    resize_sws
   ];
 }
