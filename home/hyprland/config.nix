@@ -290,7 +290,7 @@
         "float,thunderbird"
         "center,thunderbird"
         "size 90% 85%,thunderbird"  
-        "workspace special:teams silent,thunderbird"
+        "workspace special:thunderbird silent,thunderbird"
         "float,title:^(Transmission)$"
         "float,udiskie"
         "float,title:^(Volume Control)$"
