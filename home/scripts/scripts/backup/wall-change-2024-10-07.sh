@@ -20,9 +20,9 @@ nixos_rebuild_and_push() {
 
 resize_sws() {
     # Toggle the special workspace
-    # hyprctl dispatch togglespecialworkspace Spotify
+    hyprctl dispatch togglespecialworkspace Spotify
 
-    # Wait for the window to appear or disappear (adjust the sleep time if needed)
+    # Wait for the window to appear (adjust the sleep time if needed)
     sleep 0.1
     
     if hyprctl activewindow | grep -q "class: Spotify"; then

@@ -69,6 +69,7 @@ in {
 
     rofi-power-menu
     power-menu
+    
     wall_change_script
     nixos_rebuild_and_push
     resize_sws

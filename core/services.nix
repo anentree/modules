@@ -17,20 +17,14 @@
     };
     keyd = {
       enable = true;
-      keyboards = {
-        default = {
-          settings = {
-            main = {
+      keyboards.default.settings.main = {
               capslock = "overload(meta, esc)";
               tab = "overload(control, tab)";
               compose = "meta";
               # space = "overload(control, space)";
               esc = "capslock";
-              shift = "oneshot(shift)";
-              rightalt = "super";
-            };
-          };
-        };
+              # shift = "oneshot(shift)";
+              rightalt = "meta";
       };
     };
   };

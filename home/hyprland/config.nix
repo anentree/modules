@@ -12,7 +12,7 @@
         "kitty"
         "nm-applet &"
         "poweralertd &"
-        "hyprctl dispatch exec [workspace special:spotify silent] spotify"
+        "spotify"
         "swaybg -m fill -i $(find ~/Pictures/wallpapers/ -maxdepth 1 -type f) &"
         "swaync &"
         "systemctl --user import-environment &"
@@ -147,6 +147,7 @@
       };
 
       bind = [        
+        "$mainMod ALT, 0, exec, sudo systemctl poweroff"
         "$mainMod, D, exec, rofi -show drun"
         "$mainMod, F, fullscreen, 1"
         "$mainMod, J, togglesplit,"
@@ -156,8 +157,7 @@
         "$mainMod SHIFT, O, exec, toggle_oppacity"
         "$mainMod, P, pseudo,"
         "$mainMod, Q, killactive,"
-        # "$mainMod, S, togglespecialworkspace, spotify"
-        "$mainMod, S, exec, resize-sws"
+        "$mainMod, S, togglespecialworkspace, spotify; exec, resize-sws"
         "$mainMod, T, togglespecialworkspace, teams"
         "$mainMod, E, exec, nautilus"
         "$mainMod, Return, togglespecialworkspace, kitty"
@@ -282,7 +282,7 @@
         "pin,rofi"
         "float,^(Spotify)$"
         "center,^(Spotify)$"
-        "size 1728 918,^(Spotify)$"
+        "size 90% 85%,^(Spotify)$"
         "workspace special:spotify silent,^(Spotify)$"
         "float,^(teams-for-linux)$"
         "center,^(teams-for-linux)$"
