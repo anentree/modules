@@ -92,8 +92,9 @@ in
     };
     cpu= {
         format= "<span foreground='${green}'> </span> {usage}%";
-        format-alt= "<span foreground='${green}'> </span> {avg_frequency} GHz";
+        # format-alt= "<span foreground='${green}'> </span> {avg_frequency} GHz";
         interval= 2;
+        on-click= "com.github.stsdc.monitor";
     };
     memory= {
         format= "<span foreground='${cyant}'>󰟜 </span>{}%";
@@ -104,6 +105,7 @@ in
         # path = "/";
         format = "<span foreground='${orange}'>󰋊 </span>{percentage_used}%";
         interval= 60;
+        on-click= "gnome-disks";
     };
     network = {
         format-wifi = "<span foreground='${magenta}'> </span> {signalStrength}%";

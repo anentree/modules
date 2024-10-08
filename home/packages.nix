@@ -8,8 +8,10 @@ in
 
     ## personally added
     # brave
+    deepin.deepin-system-monitor
     keyd # remaps keys. see services.nix
     libsForQt5.gwenview
+    monitor # system monitor
     neofetch
     onedrive
     onedrivegui
