@@ -25,7 +25,7 @@ resize_sws() {
     # Wait for the window to appear or disappear (adjust the sleep time if needed)
     sleep 0.1
     
-    if hyprctl activewindow | grep -q "class: Spotify"; then
+    if hyprctl activewindow | grep -q -E "class: (Spotify|thunderbird|teams-for-linux|kitty)"; then
        # Resize and center the Spotify window
        hyprctl dispatch resizeactive exact 90% 85%
        hyprctl dispatch float
