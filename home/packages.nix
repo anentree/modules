@@ -7,15 +7,16 @@ in
     _2048
 
     ## personally added
-    # brave
-    deepin.deepin-system-monitor
     keyd # remaps keys. see services.nix
     libsForQt5.gwenview
     monitor # system monitor
     neofetch
-    onedrive
-    onedrivegui
+    onedriver
+    # onedrive
+    # onedrivegui
     pdfarranger
+    protonmail-bridge
+    protonmail-bridge-gui
     protonvpn-gui
     teams-for-linux
     wpsoffice
@@ -46,7 +47,7 @@ in
     man-pages	                      # extra man pages
     mpv                               # video player
     ncdu                              # disk space
-    nitch                             # systhem fetch util
+    # nitch                             # systhem fetch util
     # nix-prefetch-github
     openssl
     # onefetch                          # fetch utility for git repo
