@@ -12,11 +12,9 @@ in
     monitor # system monitor
     neofetch
     onedriver
-    # onedrive
-    # onedrivegui
+    onedrive
+    onedrivegui
     pdfarranger
-    protonmail-bridge
-    protonmail-bridge-gui
     protonvpn-gui
     teams-for-linux
     wpsoffice

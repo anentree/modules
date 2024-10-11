@@ -11,6 +11,7 @@
         "hyprlock"
         "kitty"
         "nm-applet &"
+        "onedriver"
         "poweralertd &"
         "spotify"
         "swaybg -m fill -i $(find ~/Pictures/wallpapers/ -maxdepth 1 -type f) &"
