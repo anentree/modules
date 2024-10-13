@@ -52,6 +52,10 @@
       }
     '';
     shellAliases = {
+      # my custom aliases
+      nbuild = "sudo nixos-rebuild switch --flake /home/neo/nixos-config#desktop --option show-trace true --fast";
+      ntest = "sudo nixos-rebuild test --flake /home/neo/nixos-config#desktop --option show-trace true --fast";
+      
       # Utils
       c = "clear";
       cd = "z";

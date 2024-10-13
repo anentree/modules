@@ -3,6 +3,7 @@
   imports =
        [ (import ./bootloader.nix) ]
     ++ [ (import ./hardware.nix) ]
+    ++ [ (import ./libinput.nix) ]
     ++ [ (import ./network.nix) ]
     ++ [ (import ./nh.nix) ]
     ++ [ (import ./pipewire.nix) ]

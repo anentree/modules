@@ -20,6 +20,11 @@
       setopt hist_ignore_dups
       setopt hist_verify
       
+      # Custom function for kalker
+      function m() {
+        kalker "$@"
+      }
+      
       # Use fd (https://github.com/sharkdp/fd) for listing path candidates.
       # - The first argument to the function ($1) is the base path to start traversal
       # - See the source code (completion.{bash,zsh}) for the details.
@@ -47,6 +52,10 @@
       }
     '';
     shellAliases = {
+      # my custom aliases
+      nbuild = "sudo nixos-rebuild switch --flake /home/neo/nixos-config#desktop --option show-trace true --fast";
+      ntest = "sudo nixos-rebuild test --flake /home/neo/nixos-config#desktop --option show-trace true --fast";
+      
       # Utils
       c = "clear";
       cd = "z";

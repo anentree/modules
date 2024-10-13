@@ -15,7 +15,7 @@
     ++ [(import ./gtk.nix)]                       # gtk theme
     ++ [(import ./hyprland)]                      # window manager
     ++ [(import ./kitty.nix)]                     # terminal
-    # ++ [(import (./. + "/libinput.nix"))]
+    # ++ [(import ./libinput.nix)]
     ++ [(import ./micro.nix)]                     # nano replacement
     ++ [(import ./nvim.nix)]                      # neovim editor
     ++ [(import ./packages.nix)]                  # other packages

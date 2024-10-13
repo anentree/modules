@@ -1,32 +1,38 @@
-{ config, pkgs, ... }:
+{ pkgs, ... }:
 
 {
-  environment.systemPackages = with pkgs; [
-    libinput-gestures
-  ];
-
-  users.users.neo.extraGroups = [ "input" ];
-  systemd.user.services.libinput-gestures.enable = true;
+  # Enable libinput
   services.xserver.libinput.enable = true;
 
-  # Enable the libinput-gestures service
+  # Install necessary packages
+  environment.systemPackages = with pkgs; [
+    libinput-gestures
+    xdotool
+    wmctrl
+  ];
+
+  # Configure libinput-gestures
+  environment.etc."libinput-gestures.conf".text = ''
+    # Pull up Rofi apps tab with four-finger swipe up
+    gesture swipe up 4 rofi -show drun
+
+    # Close active window with four-finger swipe down
+    gesture swipe down 4 xdotool getactivewindow windowclose
+  '';
+
+  # Enable and start libinput-gestures service
   systemd.user.services.libinput-gestures = {
-    description = "LibInput Gestures";
+    description = "Libinput Gestures";
     wantedBy = [ "graphical-session.target" ];
     partOf = [ "graphical-session.target" ];
     serviceConfig = {
       ExecStart = "${pkgs.libinput-gestures}/bin/libinput-gestures";
       Restart = "always";
+      RestartSec = 3;
     };
   };
-  
-  environment.etc."libinput-gestures.conf".text = ''
-  # Swipe up with 3 fingers to show rofi app launcher
-  gesture swipe up 3 hyprctl dispatch exec "rofi -show drun"
 
-  # Swipe down with 3 fingers to show rofi window switcher
-  gesture swipe down 3 hyprctl dispatch exec "rofi -show window"
-'';
-
+  # Ensure libinput-gestures starts automatically
+  systemd.user.services.libinput-gestures.enable = true;
 }
 
