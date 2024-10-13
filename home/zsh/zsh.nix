@@ -47,6 +47,9 @@
       }
     '';
     shellAliases = {
+      # my custom alias
+      m = "kalker \"$(echo -n \"$@\")\""; # do math with no syntax
+      
       # Utils
       c = "clear";
       cd = "z";
