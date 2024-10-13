@@ -21,7 +21,7 @@
       setopt hist_verify
       
       # Custom function for kalker
-      function m() {
+      function *() {
         kalker "$@"
       }
       
@@ -52,9 +52,6 @@
       }
     '';
     shellAliases = {
-      # my custom alias
-      m = "kalker \"$(echo -n \"$@\")\""; # do math with no syntax
-      
       # Utils
       c = "clear";
       cd = "z";
