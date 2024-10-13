@@ -21,7 +21,7 @@
       setopt hist_verify
       
       # Custom function for kalker
-      function *() {
+      function m() {
         kalker "$@"
       }
       
