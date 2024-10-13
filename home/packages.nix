@@ -9,6 +9,7 @@ in
     ## personally added
     keyd # remaps keys. see services.nix
     libsForQt5.gwenview
+    kalker # math in terminal
     monitor # system monitor
     neofetch
     onedriver

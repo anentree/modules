@@ -75,6 +75,7 @@
           background: #FBF1C7;
       }
     '';
+  };
 
   # Libinput Section
   environment.systemPackages = with pkgs; [
