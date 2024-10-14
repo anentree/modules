@@ -23,7 +23,6 @@
               # shift = "oneshot(shift)";
       };
     };
-    onedrive.enable = true;
     printing = {
       enable = true;
       drivers = [ pkgs.hplipWithPlugin ];

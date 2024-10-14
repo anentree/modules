@@ -53,8 +53,10 @@
     '';
     shellAliases = {
       # my custom aliases
-      nbuild = "sudo nixos-rebuild switch --flake /home/neo/nixos-config#desktop --option show-trace true --fast";
-      ntest = "sudo nixos-rebuild test --flake /home/neo/nixos-config#desktop --option show-trace true --fast";
+      nbuildd = "sudo nixos-rebuild switch --flake /home/neo/nixos-config#desktop --option show-trace true";
+      nbuildl = "sudo nixos-rebuild switch --flake /home/neo/nixos-config#laptop --option show-trace true";
+      ntestd = "sudo nixos-rebuild test --flake /home/neo/nixos-config#desktop --option show-trace true";
+      ntestl = "sudo nixos-rebuild test --flake /home/neo/nixos-config#laptop --option show-trace true";
       
       # Utils
       c = "clear";
@@ -76,7 +78,7 @@
       tree = "eza --icons --tree --group-directories-first";
 
       # Nixos
-      cdnix = "cd ~/nixos-config && codium ~/nixos-config";
+      codenix = "codium ~/nixos-config";
       ns = "nom-shell --run zsh";
       nix-switch = "nh os switch";
       nix-update = "nh os switch --update";

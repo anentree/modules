@@ -6,6 +6,7 @@
     ++ [ (import ./libinput.nix) ]
     ++ [ (import ./network.nix) ]
     ++ [ (import ./nh.nix) ]
+    ++ [ (import ./onedrive.nix) ]
     ++ [ (import ./pipewire.nix) ]
     ++ [ (import ./program.nix) ]
     ++ [ (import ./security.nix) ]

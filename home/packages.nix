@@ -12,9 +12,6 @@ in
     kalker # math in terminal
     monitor # system monitor
     neofetch
-    onedriver
-    onedrive
-    onedrivegui
     pdfarranger
     protonvpn-gui
     teams-for-linux

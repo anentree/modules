@@ -11,7 +11,6 @@
         "hyprlock"
         "kitty"
         "nm-applet &"
-        "onedriver"
         "poweralertd &"
         "spotify"
         "swaybg -m fill -i $(find ~/Pictures/wallpapers/ -maxdepth 1 -type f) &"
@@ -147,7 +146,7 @@
         ];
       };
 
-      bind = [        
+      bind = [
         "$mainMod ALT, 0, exec, sudo systemctl poweroff"
         "$mainMod, D, exec, rofi -show drun"
         "$mainMod, F, fullscreen, 1"
@@ -317,11 +316,6 @@
         "opacity 1.0 override 1.0 override, class:(floorp)"
         "opacity 1.0 override 1.0 override, class:(evince)"
         "workspace 1, class:^(floorp)$"
-        # "workspace 4, class:^(discord)$"
-        # "workspace 4, class:^(Gimp-2.10)$"
-        # "workspace 4, class:^(Aseprite)$"
-        # "workspace 5, class:^(Audacious)$"
-        # "workspace 5, class:^(Spotify)$"
         "idleinhibit focus, class:^(mpv)$"
         "idleinhibit fullscreen, class:^(firefox)$"
         "float,class:^(zenity)$"
