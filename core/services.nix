@@ -19,8 +19,6 @@
               esc = "capslock";
               rightalt = "meta";
               tab = "overload(control, tab)";
-              # space = "overload(control, space)";
-              # shift = "oneshot(shift)";
       };
     };
     printing = {

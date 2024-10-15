@@ -1,6 +1,7 @@
-{ pkgs, ... }: 
+{ config, pkgs, ... }: 
 {
   home.packages = with pkgs; [ floorp ];
+  home.file.".floorp".source = config.lib.file.mkOutOfStoreSymlink "/home/neo/OneDrive/.floorp";
 
   # Floorp-specific configuration
   home.file.".config/floorp/user.js".text = ''
@@ -21,13 +22,15 @@
     StartupNotify=true
   '';
 
-  programs.brave = {
-    enable = true;
-    commandLineArgs = [
-      "--enable-features=TouchpadOverscrollHistoryNavigation"
-      "--ozone-platform=wayland"
-      "--disable-features=TabHoverCards"
-    ];
+  programs = {
+    brave = {
+      enable = true;
+      commandLineArgs = [
+        "--enable-features=TouchpadOverscrollHistoryNavigation"
+        "--ozone-platform=wayland"
+        "--disable-features=TabHoverCards"
+      ];
+    };  
   };
 }
 

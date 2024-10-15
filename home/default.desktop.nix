@@ -4,7 +4,6 @@
     # (import ./rider.nix)     # C# JetBrain editor
     # (import ./steam.nix)
     # (import ./unity.nix)
-    (import ./zsh)
   ];
 }
 
