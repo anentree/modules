@@ -10,8 +10,8 @@
       programs.home-manager.enable = true;
       imports = 
         if (host == "desktop") then 
-          [ ./../home/default.desktop.nix inputs.nix-flatpak.homeManagerModules.nix-flatpak ] 
-        else [ ./../home inputs.nix-flatpak.homeManagerModules.nix-flatpak ];
+          [ ./../home/default.desktop.nix ] 
+        else [ ./../home ];
       home = {
         username = "${username}";
         homeDirectory = "/home/${username}";

@@ -46,7 +46,6 @@ in
     # nitch                             # systhem fetch util
     # nix-prefetch-github
     openssl
-    # onefetch                          # fetch utility for git repo
     pamixer                           # pulseaudio command line mixer
     playerctl                         # controller for media players
     poweralertd
@@ -54,9 +53,6 @@ in
     ripgrep                           # grep replacement
     # tdf                               # cli pdf viewer
     tldr
-    # todo                              # cli todo list
-    # toipe                             # typing test in the terminal
-    # ttyper                            # cli typing test
     unzip
     # valgrind                          # c memory analyzer
     wl-clipboard                      # clipboard utils for wayland (wl-copy, wl-paste)
@@ -66,22 +62,12 @@ in
     xdg-utils
     xxd
 
-    ## CLI 
-    # cbonsai                           # terminal screensaver
-    # cmatrix
-    # pipes                             # terminal screensaver
-    # sl
-    # tty-clock                         # cli clock
-
     ## GUI Apps
-    # audacity
     bleachbit                         # cache cleaner
     gimp
     libreoffice
     pavucontrol                       # pulseaudio volume controle (GUI)
     qalculate-gtk                     # calculator
-    # soundwireserver                   # pass audio to android phone
-    thunderbird
     vlc
     # winetricks
     # wineWowPackages.wayland

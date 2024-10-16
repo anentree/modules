@@ -4,7 +4,7 @@
     ++ [(import ./btop.nix)]                      # resouces monitor 
     ++ [(import ./discord/discord.nix)]           # discord with catppuccin theme
     ++ [(import ./fastfetch.nix)]                 # fetch tool
-    ++ [(import ./flatpaks.nix)]
+    # ++ [(import ./flatpaks.nix)]
     ++ [(import ./floorp/floorp.nix)]             # firefox based browser
     ++ [(import ./fzf.nix)]                       # fuzzy finder
     ++ [(import ./git.nix)]                       # version control
