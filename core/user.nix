@@ -10,7 +10,9 @@
       programs.home-manager.enable = true;
       imports = 
         if (host == "desktop") then 
-          [ ./../home/default.desktop.nix ] 
+          [ ./../home/default.desktop.nix ]
+        else if (host == "laptop") then
+          [ ./../home/default.laptop.nix ]
         else [ ./../home ];
       home = {
         username = "${username}";

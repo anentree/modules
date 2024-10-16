@@ -19,6 +19,7 @@ let custom = {
 };
 in 
 {
+  _module.args.custom = custom;
   programs.waybar.style = with custom; ''
     * {
       border: none;

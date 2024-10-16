@@ -1,29 +1,30 @@
-{inputs, username, host, ...}: {
-  imports =
-       [(import ./bat.nix)]                       # better cat command
-    ++ [(import ./btop.nix)]                      # resouces monitor 
-    ++ [(import ./discord/discord.nix)]           # discord with catppuccin theme
-    ++ [(import ./fastfetch.nix)]                 # fetch tool
-    # ++ [(import ./flatpaks.nix)]
-    ++ [(import ./floorp/floorp.nix)]             # firefox based browser
-    ++ [(import ./fzf.nix)]                       # fuzzy finder
-    ++ [(import ./git.nix)]                       # version control
-    ++ [(import ./gnome.nix)]                     # gnome apps
-    ++ [(import ./gtk.nix)]                       # gtk theme
-    ++ [(import ./hyprland)]                      # window manager
-    ++ [(import ./kitty.nix)]                     # terminal
-    ++ [(import ./micro.nix)]                     # nano replacement
-    ++ [(import ./nvim.nix)]                      # neovim editor
-    ++ [(import ./packages.nix)]                  # other packages
-    ++ [(import ./rofi.nix)]                      # launcher
-    ++ [(import ./scripts/scripts.nix)]           # personal scripts
-    ++ [(import ./spicetify.nix)]                 # spotify client
-    ++ [(import ./starship.nix)]                  # shell prompt
-    ++ [(import ./swaylock.nix)]                  # lock screen
-    ++ [(import ./swaync/swaync.nix)]             # notification deamon
-    ++ [(import ./vscodium.nix)]                  # vscode forck
-    ++ [(import ./waybar)]                        # status bar
-    ++ [(import ./xdg-mimes.nix)]                 # xdg config
-    ++ [(import ./zsh/zsh.nix)];
-
+{inputs, username, host, ...}: 
+{
+  imports = [
+    ./bat.nix                       # better cat command
+    ./btop.nix                      # resouces monitor 
+    ./discord/discord.nix           # discord with catppuccin theme
+    ./fastfetch.nix                 # fetch tool
+    # ./flatpaks.nix
+    ./floorp/floorp.nix             # firefox based browser
+    ./fzf.nix                       # fuzzy finder
+    ./git.nix                       # version control
+    ./gnome.nix                     # gnome apps
+    ./gtk.nix                       # gtk theme
+    ./hyprland                      # window manager
+    ./kitty.nix                     # terminal
+    ./micro.nix                     # nano replacement
+    ./nvim.nix                      # neovim editor
+    ./packages.nix                  # other packages
+    ./rofi.nix                      # launcher
+    ./scripts/scripts.nix           # personal scripts
+    ./spicetify.nix                 # spotify client
+    ./starship.nix                  # shell prompt
+    ./swaylock.nix                  # lock screen
+    ./swaync/swaync.nix             # notification deamon
+    ./vscodium.nix                  # vscode forck
+    ./waybar                        # status bar
+    ./xdg-mimes.nix                 # xdg config
+    ./zsh/zsh.nix
+  ];
 }

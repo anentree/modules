@@ -19,6 +19,7 @@ let custom = {
 };
 in 
 {
+  _module.args.custom = custom;
   programs.waybar.settings.mainBar = with custom; {
     position= "bottom";
     layer= "top";
@@ -45,7 +46,9 @@ in
         "custom/notification"
     ];
     clock = {
-      format = "{:%b %d - %I:%M}";
+      format = if (host == "desktop") 
+         then "{:%a, %b %d, %I:%M}" 
+         else "{:%b %d, %I:%M}";
       tooltip = true;
       tooltip-format = "<tt><small>{calendar}</small></tt>";
       calendar = {
@@ -59,11 +62,10 @@ in
         };
       };
       actions = {
-        on-click = "shift_up";
-        on-click-right = "shift_down";
+        on-click = "shift_down";
+        on-click-right = "shift_up";
       };
     };
-
     "hyprland/workspaces"= {
         active-only= false;
         disable-scroll= true;
@@ -77,7 +79,7 @@ in
             "5"= "V";
             "6"= "VI";
             "7"= "VII";
-            "8"= "VII";
+            "8"= "VIII";
             "9"= "IX";
             "10"= "X";
             sort-by-number= true;
