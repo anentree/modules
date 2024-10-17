@@ -14,11 +14,12 @@
     keyd = {
       enable = true;
       keyboards.default.settings.main = {
-              capslock = "overload(meta, esc)";
-              compose = "meta";
               esc = "capslock";
-              rightalt = "meta";
               tab = "overload(control, tab)";
+              capslock = "overload(meta, esc)";
+              backslash = "overload(control, backslash)";
+              enter = "overload(meta, enter)";
+              rightalt = "layer(meta)";
       };
     };
     printing = {
