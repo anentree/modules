@@ -160,6 +160,7 @@
         "type": "github"
       }
     },
+<<<<<<< HEAD
     "freetype2": {
       "flake": false,
       "locked": {
@@ -216,6 +217,31 @@
         "type": "github"
       }
     },
+||||||| parent of ba7d552 (Auto-commit after successful NixOS rebuild)
+=======
+    "gitignore": {
+      "inputs": {
+        "nixpkgs": [
+          "hyprland",
+          "pre-commit-hooks",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1709087332,
+        "narHash": "sha256-HG2cCnktfHsKV0s4XW83gU3F57gaTljL9KNSuG6bnQs=",
+        "owner": "hercules-ci",
+        "repo": "gitignore.nix",
+        "rev": "637db329424fd7e46cf4185293b9cc8c88c95394",
+        "type": "github"
+      },
+      "original": {
+        "owner": "hercules-ci",
+        "repo": "gitignore.nix",
+        "type": "github"
+      }
+    },
+>>>>>>> ba7d552 (Auto-commit after successful NixOS rebuild)
     "home-manager": {
       "inputs": {
         "nixpkgs": [
@@ -223,11 +249,25 @@
         ]
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1728337164,
         "narHash": "sha256-VdRTjJFyq4Q9U7Z/UoC2Q5jK8vSo6E86lHc2OanXtvc=",
+||||||| parent of ba7d552 (Auto-commit after successful NixOS rebuild)
+        "lastModified": 1727383923,
+        "narHash": "sha256-4/vacp3CwdGoPf8U4e/N8OsGYtO09WTcQK5FqYfJbKs=",
+=======
+        "lastModified": 1728903686,
+        "narHash": "sha256-ZHFrGNWDDriZ4m8CA/5kDa250SG1LiiLPApv1p/JF0o=",
+>>>>>>> ba7d552 (Auto-commit after successful NixOS rebuild)
         "owner": "nix-community",
         "repo": "home-manager",
+<<<<<<< HEAD
         "rev": "038630363e7de57c36c417fd2f5d7c14773403e4",
+||||||| parent of ba7d552 (Auto-commit after successful NixOS rebuild)
+        "rev": "ffe2d07e771580a005e675108212597e5b367d2d",
+=======
+        "rev": "e1aec543f5caf643ca0d94b6a633101942fd065f",
+>>>>>>> ba7d552 (Auto-commit after successful NixOS rebuild)
         "type": "github"
       },
       "original": {
@@ -297,11 +337,27 @@
         "xdph": "xdph"
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1728467929,
         "narHash": "sha256-lqUWXwhO2jpbi1lDFXnEwUzE/c8C8TOE7UNObI+qqxM=",
+||||||| parent of ba7d552 (Auto-commit after successful NixOS rebuild)
+        "lastModified": 1727484580,
+        "narHash": "sha256-mnsHdcJdvc2ZDl5xRSztvXfNxvLQ2EGsDEAbxnKYl9A=",
+=======
+        "lastModified": 1728919567,
+        "narHash": "sha256-8AbHnylbthUxDY2LeUeESq5NcqWLl/JFCGldnFq2CZI=",
+>>>>>>> ba7d552 (Auto-commit after successful NixOS rebuild)
         "ref": "refs/heads/main",
+<<<<<<< HEAD
         "rev": "6ae89940c761d4ed4317df0af29e8df41d472091",
         "revCount": 5323,
+||||||| parent of ba7d552 (Auto-commit after successful NixOS rebuild)
+        "rev": "2cf6e7862a844ad96aa060d63f6774df7e2234a6",
+        "revCount": 5273,
+=======
+        "rev": "f309681d4a78d1c12d8a04fe37075a50a750c2ec",
+        "revCount": 5341,
+>>>>>>> ba7d552 (Auto-commit after successful NixOS rebuild)
         "submodules": true,
         "type": "git",
         "url": "https://github.com/hyprwm/Hyprland"
@@ -505,6 +561,7 @@
         "type": "github"
       }
     },
+<<<<<<< HEAD
     "libpng": {
       "flake": false,
       "locked": {
@@ -537,6 +594,24 @@
         "type": "github"
       }
     },
+||||||| parent of ba7d552 (Auto-commit after successful NixOS rebuild)
+=======
+    "nix-flatpak": {
+      "locked": {
+        "lastModified": 1729025406,
+        "narHash": "sha256-uYbDN6JikC19WfD3zg0kpOpJVZFvBhHXYo3YJo28vOs=",
+        "owner": "gmodena",
+        "repo": "nix-flatpak",
+        "rev": "8d1193a959c7810f01610c10a055b0020390bf4e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "gmodena",
+        "repo": "nix-flatpak",
+        "type": "github"
+      }
+    },
+>>>>>>> ba7d552 (Auto-commit after successful NixOS rebuild)
     "nix-gaming": {
       "inputs": {
         "flake-parts": "flake-parts",
@@ -544,11 +619,25 @@
         "umu": "umu"
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1728437935,
         "narHash": "sha256-bQCDaDc4AlYA54ZCR624NM/7UWK4c64In0+S2p4+aO8=",
+||||||| parent of ba7d552 (Auto-commit after successful NixOS rebuild)
+        "lastModified": 1727420283,
+        "narHash": "sha256-Da6aBQckH3J/HKm9AFlwNrnbEamNe+JiOFZpNlH53lE=",
+=======
+        "lastModified": 1728919237,
+        "narHash": "sha256-pjYeBH3eGhjIYyaHJbSOsPZZkbfJ07dO55NAxv7FUNY=",
+>>>>>>> ba7d552 (Auto-commit after successful NixOS rebuild)
         "owner": "fufexan",
         "repo": "nix-gaming",
+<<<<<<< HEAD
         "rev": "d7dccee59b7c181872719bbfe69ba86e8c0585cc",
+||||||| parent of ba7d552 (Auto-commit after successful NixOS rebuild)
+        "rev": "615ff6f867b4dfb22cbcba106d2a80dab39a190d",
+=======
+        "rev": "2c8d8bb698899ac978f0ccc7b88cf2229593dacc",
+>>>>>>> ba7d552 (Auto-commit after successful NixOS rebuild)
         "type": "github"
       },
       "original": {
@@ -667,11 +756,25 @@
     },
     "nixpkgs_6": {
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1728093190,
         "narHash": "sha256-CAZF2NRuHmqTtRTNAruWpHA43Gg2UvuCNEIzabP0l6M=",
+||||||| parent of ba7d552 (Auto-commit after successful NixOS rebuild)
+        "lastModified": 1726871744,
+        "narHash": "sha256-V5LpfdHyQkUF7RfOaDPrZDP+oqz88lTJrMT1+stXNwo=",
+=======
+        "lastModified": 1728538411,
+        "narHash": "sha256-f0SBJz1eZ2yOuKUr5CA9BHULGXVSn6miBuUWdTyhUhU=",
+>>>>>>> ba7d552 (Auto-commit after successful NixOS rebuild)
         "owner": "NixOS",
         "repo": "nixpkgs",
+<<<<<<< HEAD
         "rev": "e2f08f4d8b3ecb5cf5c9fd9cb2d53bb3c71807da",
+||||||| parent of ba7d552 (Auto-commit after successful NixOS rebuild)
+        "rev": "a1d92660c6b3b7c26fb883500a80ea9d33321be2",
+=======
+        "rev": "b69de56fac8c2b6f8fd27f2eca01dcda8e0a4221",
+>>>>>>> ba7d552 (Auto-commit after successful NixOS rebuild)
         "type": "github"
       },
       "original": {
@@ -683,11 +786,25 @@
     },
     "nixpkgs_7": {
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1728241625,
         "narHash": "sha256-yumd4fBc/hi8a9QgA9IT8vlQuLZ2oqhkJXHPKxH/tRw=",
+||||||| parent of ba7d552 (Auto-commit after successful NixOS rebuild)
+        "lastModified": 1727348695,
+        "narHash": "sha256-J+PeFKSDV+pHL7ukkfpVzCOO7mBSrrpJ3svwBFABbhI=",
+=======
+        "lastModified": 1728492678,
+        "narHash": "sha256-9UTxR8eukdg+XZeHgxW5hQA9fIKHsKCdOIUycTryeVw=",
+>>>>>>> ba7d552 (Auto-commit after successful NixOS rebuild)
         "owner": "NixOS",
         "repo": "nixpkgs",
+<<<<<<< HEAD
         "rev": "c31898adf5a8ed202ce5bea9f347b1c6871f32d1",
+||||||| parent of ba7d552 (Auto-commit after successful NixOS rebuild)
+        "rev": "1925c603f17fc89f4c8f6bf6f631a802ad85d784",
+=======
+        "rev": "5633bcff0c6162b9e4b5f1264264611e950c8ec7",
+>>>>>>> ba7d552 (Auto-commit after successful NixOS rebuild)
         "type": "github"
       },
       "original": {
@@ -699,11 +816,25 @@
     },
     "nur": {
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1728490142,
         "narHash": "sha256-5iIn7eiCYNq9eWhUAiXDHd3vkA4UCCruU9BEOP3FzfA=",
+||||||| parent of ba7d552 (Auto-commit after successful NixOS rebuild)
+        "lastModified": 1727517643,
+        "narHash": "sha256-j3+7WR8swHrLAy2EzRsRG6J6t64y3S31NXvmwtZkuho=",
+=======
+        "lastModified": 1728920863,
+        "narHash": "sha256-iZuy1a21fxKbfxraOPsMY0kVgzF+WIE4QzyDp4oAIDs=",
+>>>>>>> ba7d552 (Auto-commit after successful NixOS rebuild)
         "owner": "nix-community",
         "repo": "NUR",
+<<<<<<< HEAD
         "rev": "2a8c9d69e204ac6991449a12d69f748f60bb794c",
+||||||| parent of ba7d552 (Auto-commit after successful NixOS rebuild)
+        "rev": "69d2128b623b8d0a2542dcc0cb1fe0df8ff71c2e",
+=======
+        "rev": "acc18cef12b9be2839d4c5962210219e231db3d7",
+>>>>>>> ba7d552 (Auto-commit after successful NixOS rebuild)
         "type": "github"
       },
       "original": {
@@ -798,11 +929,25 @@
         ]
       },
       "locked": {
+<<<<<<< HEAD
         "lastModified": 1728447442,
         "narHash": "sha256-4KRBf3doA1OKSQcXc5eQu1NHFdno0SSZI/Xmj4zy1iU=",
+||||||| parent of ba7d552 (Auto-commit after successful NixOS rebuild)
+        "lastModified": 1727496988,
+        "narHash": "sha256-fi7G9bODA4iUN1g9psIE1U3h7xulNLtwAq0ziwLh0oM=",
+=======
+        "lastModified": 1728879439,
+        "narHash": "sha256-spvD0mgjj0xMv4qinSl5lxGLe8V8JAeIWNs0HF0i3kE=",
+>>>>>>> ba7d552 (Auto-commit after successful NixOS rebuild)
         "owner": "gerg-l",
         "repo": "spicetify-nix",
+<<<<<<< HEAD
         "rev": "85ca2b370f962f81973443adb31f2e3559eda1dd",
+||||||| parent of ba7d552 (Auto-commit after successful NixOS rebuild)
+        "rev": "65a95ae7c145ed836ca7d4a1e6be5154125490cf",
+=======
+        "rev": "c3463a8497fef3150aa8635d32b61b16e17a1e6b",
+>>>>>>> ba7d552 (Auto-commit after successful NixOS rebuild)
         "type": "github"
       },
       "original": {
@@ -865,11 +1010,27 @@
       },
       "locked": {
         "dir": "packaging/nix",
+<<<<<<< HEAD
         "lastModified": 1728075410,
         "narHash": "sha256-JjA/C6EgpoAAdrm8KebOizz2+73V9wI6Y7JreAfWAwU=",
+||||||| parent of ba7d552 (Auto-commit after successful NixOS rebuild)
+        "lastModified": 1726768365,
+        "narHash": "sha256-5yQJ3krsZioC+Nim4/oaOjKp3CXFWolTFMpXnUBcYtE=",
+=======
+        "lastModified": 1728772489,
+        "narHash": "sha256-6sHjXNhPrRXIV1au5jlSXHeqn/QHb9wyRt7V0F5p4PA=",
+>>>>>>> ba7d552 (Auto-commit after successful NixOS rebuild)
         "ref": "refs/heads/main",
+<<<<<<< HEAD
         "rev": "4dc0ef6c299d05cde360bec725765b370d2b75c8",
         "revCount": 737,
+||||||| parent of ba7d552 (Auto-commit after successful NixOS rebuild)
+        "rev": "e42043a26639cfb69d14c6945ecdebe2bb3c42fc",
+        "revCount": 727,
+=======
+        "rev": "475e2b37e34a663b11f8c92b79dd45637a3e848c",
+        "revCount": 770,
+>>>>>>> ba7d552 (Auto-commit after successful NixOS rebuild)
         "submodules": true,
         "type": "git",
         "url": "https://github.com/Open-Wine-Components/umu-launcher/?dir=packaging/nix"

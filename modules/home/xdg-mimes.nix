@@ -1,10 +1,17 @@
 { pkgs, lib, ... }:
 with lib;
 let
+  inherit (lib) lists attrsets;
   defaultApps = {
     browser = [ "floorp.desktop" ];
     text = [ "org.gnome.TextEditor.desktop" ];
+<<<<<<< HEAD
     image = [ "viewnior.desktop" ];
+||||||| parent of ba7d552 (Auto-commit after successful NixOS rebuild)
+    image = [ "imv.desktop" ];
+=======
+    image = [ "com.interversehq.qView.desktop" ];
+>>>>>>> ba7d552 (Auto-commit after successful NixOS rebuild)
     audio = [ "mpv.desktop" ];
     video = [ "mpv.desktop" ];
     directory = [ "nemo.desktop" ];
@@ -12,7 +19,6 @@ let
     pdf = [ "org.gnome.Evince.desktop" ];
     terminal = [ "wezterm.desktop" ];
     archive = [ "org.gnome.FileRoller.desktop" ];
-    discord = [ "webcord.desktop" ];
   };
 
   mimeMap = {
@@ -75,7 +81,6 @@ let
       "application/7z"
       "application/*tar"
     ];
-    discord = [ "x-scheme-handler/discord" ];
   };
 
   associations =

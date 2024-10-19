@@ -18,10 +18,20 @@
   environment.systemPackages = with pkgs; [
     wget
     git
+    # for printing and cups
+       cups
+       cups-filters
+       ghostscript
   ];
 
-  time.timeZone = "Europe/Paris";
-  i18n.defaultLocale = "en_US.UTF-8";
+  time.timeZone = "America/Chicago";
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    extraLocaleSettings = {
+      LC_TIME = "en_US.UTF-8";
+    };
+  };
   nixpkgs.config.allowUnfree = true;
   system.stateVersion = "24.05";
+  
 }

@@ -9,7 +9,6 @@
   toggle_blur = pkgs.writeScriptBin "toggle_blur" (builtins.readFile ./scripts/toggle_blur.sh);
   toggle_oppacity = pkgs.writeScriptBin "toggle_oppacity" (builtins.readFile ./scripts/toggle_oppacity.sh);
   toggle_waybar = pkgs.writeScriptBin "toggle_waybar" (builtins.readFile ./scripts/toggle_waybar.sh);
-  toggle_float = pkgs.writeScriptBin "toggle_float" (builtins.readFile ./scripts/toggle_float.sh);
   
   maxfetch = pkgs.writeScriptBin "maxfetch" (builtins.readFile ./scripts/maxfetch.sh);
   
@@ -25,21 +24,9 @@
   ascii = pkgs.writeScriptBin "ascii" (builtins.readFile ./scripts/ascii.sh);
   
   record = pkgs.writeScriptBin "record" (builtins.readFile ./scripts/record.sh);
-
-  screenshot = pkgs.writeScriptBin "screenshot" (builtins.readFile ./scripts/screenshot.sh);
   
   rofi-power-menu = pkgs.writeScriptBin "rofi-power-menu" (builtins.readFile ./scripts/rofi-power-menu.sh);
   power-menu = pkgs.writeScriptBin "power-menu" (builtins.readFile ./scripts/power-menu.sh);
-  
-  nbuildpush = pkgs.writeScriptBin "nbuildpush" (builtins.readFile ./scripts/nbuildpush.sh);
-  resize-sws = pkgs.writeScriptBin "resize-sws" (builtins.readFile ./scripts/resize-sws.sh);
-  # nixos_rebuild_and_push = pkgs.writeScriptBin "nixos-rebuild-and-push" ''
-  #  exec ${wall_change_script}/bin/wall-change nixos-rebuild-and-push "$@"
-  # '';
-  # resize_sws = pkgs.writeScriptBin "resize-sws" ''
-  #   exec ${wall_change_script}/bin/wall-change resize-sws
-  # '';
-  
 in {
   home.packages = with pkgs; [
     wall-change
@@ -52,7 +39,6 @@ in {
     toggle_blur
     toggle_oppacity
     toggle_waybar
-    toggle_float
 
     maxfetch
 
@@ -69,12 +55,7 @@ in {
 
     record
 
-    screenshot
-
     rofi-power-menu
     power-menu
-    
-    nbuildpush
-    resize-sws
   ];
 }

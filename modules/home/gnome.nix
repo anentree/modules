@@ -3,12 +3,24 @@
   home.packages = (with pkgs; [
     evince                                        # pdf
     file-roller                                   # archive
+    gnome-disk-utility
     gnome-text-editor                             # gedit
+<<<<<<< HEAD
+||||||| parent of ba7d552 (Auto-commit after successful NixOS rebuild)
+    nautilus                                      # file manager
+=======
+    nautilus                                      # file manager
+    sushi
+    # scanner
+      simple-scan
+      sane-backends
+      gnome-control-center
+>>>>>>> ba7d552 (Auto-commit after successful NixOS rebuild)
   ]);
 
   dconf.settings = {
     "org/gnome/TextEditor" = {
-      custom-font = "CaskaydiaCove Nerd Font 15";
+      custom-font = "FiraCode Nerd Font 15";
       highlight-current-line = true;
       indent-style = "space";
       restore-session = false;

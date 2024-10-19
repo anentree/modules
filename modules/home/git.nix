@@ -3,8 +3,8 @@
   programs.git = {
     enable = true;
     
-    userName = "Frost-Phoenix";
-    userEmail = "67cyril6767@gmail.com";
+    userName = "anentree";
+    userEmail = "brantleygunn@gmail.com";
     
     extraConfig = { 
       init.defaultBranch = "main";
@@ -24,7 +24,7 @@
     };
   };
 
-  home.packages = [ pkgs.gh ]; # pkgs.git-lfs
+  # home.packages = [ pkgs.gh pkgs.git-lfs ];
 
   programs.zsh.shellAliases = {
     g     = "lazygit";

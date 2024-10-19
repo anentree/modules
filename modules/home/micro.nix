@@ -12,7 +12,6 @@
       "tabstospaces" = true;
       "tabsize" = 4;
       "mkparents" = true;
-      "colorcolumn" = 80;
     };
   };
 

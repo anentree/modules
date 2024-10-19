@@ -1,4 +1,4 @@
-{ pkgs, username, ... }: 
+{ configs, pkgs, username, ... }: 
 {
   programs.nh = {
     enable = true;
@@ -13,4 +13,5 @@
     nix-output-monitor
     nvd
   ];
+
 }

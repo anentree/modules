@@ -20,6 +20,7 @@ let custom = {
 };
 in 
 {
+  _module.args.custom = custom;
   programs.waybar.style = with custom; ''
     * {
       border: none;
@@ -33,8 +34,14 @@ in
     }
 
     window#waybar {
+<<<<<<< HEAD
       background: #282828;
       border-top: 1px solid #928374;
+||||||| parent of ba7d552 (Auto-commit after successful NixOS rebuild)
+      background: #282828;
+=======
+      background: ${background_0};
+>>>>>>> ba7d552 (Auto-commit after successful NixOS rebuild)
     }
 
     tooltip {

@@ -19,11 +19,10 @@ let custom = {
 };
 in 
 {
-  _module.args.custom = custom;
   programs.waybar.settings.mainBar = with custom; {
     position= "bottom";
     layer= "top";
-    height= 28;
+    height= 30;
     margin-top= 0;
     margin-bottom= 0;
     margin-left= 0;
@@ -45,26 +44,14 @@ in
         "battery"
         "custom/notification"
     ];
-    clock = {
-      format = if (host == "desktop") 
-         then "{:%a, %b %d, %I:%M}" 
-         else "{:%b %d, %I:%M}";
-      tooltip = true;
-      tooltip-format = "<tt><small>{calendar}</small></tt>";
-      calendar = {
-        mode = "month";
-        format = {
-          months = "<span color='${blue}'><b>{}</b></span>";
-          days = "<span color='${text_color}'>{}</span>";
-          weeks = "<span color='${orange}'><b>W{}</b></span>";
-          weekdays = "<span color='${yellow}'><b>{}</b></span>";
-          today = "<span color='${green}'><b><u>{}</u></b></span>";
+    clock= {
+        calendar = {
+          format = { today = "<span color='#98971A'><b>{}</b></span>"; };
         };
-      };
-      actions = {
-        on-click = "shift_down";
-        on-click-right = "shift_up";
-      };
+        format = "  {:%I:%M}"; # Changed from {:%H:%M} to {:%I:%M %p}
+        tooltip= "true";
+        tooltip-format= "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
+        format-alt= "  {:%m/%d}";
     };
     "hyprland/workspaces"= {
         active-only= false;
@@ -72,29 +59,6 @@ in
         format = "{icon}";
         on-click= "activate";
         format-icons= {
-<<<<<<< HEAD
-            "1"  = "I";
-            "2"  = "II";
-            "3"  = "III";
-            "4"  = "IV";
-            "5"  = "V";
-            "6"  = "VI";
-            "7"  = "VII";
-            "8"  = "VIII";
-            "9"  = "IX";
-            "10" = "X";
-||||||| parent of ba7d552 (Auto-commit after successful NixOS rebuild)
-            "1"  = "I";
-            "2"  = "II";
-            "3"  = "III";
-            "4"  = "IV";
-            "5"  = "V";
-            "6"  = "VI";
-            "7"  = "VII";
-            "8"  = "VII";
-            "9"  = "IX";
-            "10" = "X";
-=======
             "1"= "I";
             "2"= "II";
             "3"= "III";
@@ -102,10 +66,8 @@ in
             "5"= "V";
             "6"= "VI";
             "7"= "VII";
-            "8"= "VIII";
+            "8"= "VII";
             "9"= "IX";
-            "10"= "X";
->>>>>>> ba7d552 (Auto-commit after successful NixOS rebuild)
             sort-by-number= true;
         };
         persistent-workspaces = {
@@ -118,9 +80,8 @@ in
     };
     cpu= {
         format= "<span foreground='${green}'> </span> {usage}%";
-        # format-alt= "<span foreground='${green}'> </span> {avg_frequency} GHz";
+        format-alt= "<span foreground='${green}'> </span> {avg_frequency} GHz";
         interval= 2;
-        on-click= "com.github.stsdc.monitor";
     };
     memory= {
         format= "<span foreground='${cyant}'>󰟜 </span>{}%";
@@ -131,7 +92,6 @@ in
         # path = "/";
         format = "<span foreground='${orange}'>󰋊 </span>{percentage_used}%";
         interval= 60;
-        on-click= "gnome-disks";
     };
     network = {
         format-wifi = "<span foreground='${magenta}'> </span> {signalStrength}%";
@@ -144,14 +104,14 @@ in
         icon-size= 20;
         spacing= 8;
     };
-    pulseaudio = {
+    pulseaudio= {
         format= "{icon} {volume}%";
         format-muted= "<span foreground='${blue}'> </span> {volume}%";
         format-icons= {
             default= ["<span foreground='${blue}'> </span>"];
         };
         scroll-step= 5;
-        on-click= "pavucontrol";
+        on-click= "pamixer -t";
     };
     battery = {
         format = "<span foreground='${yellow}'>{icon}</span> {capacity}%";
@@ -161,7 +121,7 @@ in
         format-warning = "<span foreground='${yellow}'> </span>{capacity}%";
         interval = 5;
         states = {
-            warning = 10;
+            warning = 20;
         };
         format-time = "{H}h{M}m";
         tooltip = true;
