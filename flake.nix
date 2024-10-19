@@ -22,18 +22,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     hyprmag.url = "github:SIMULATAN/hyprmag";
-<<<<<<< HEAD
-
-    wezterm = {
-      url = "github:wez/wezterm/main?dir=nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nix-flatpak.url = "github:gmodena/nix-flatpak";
-||||||| parent of ba7d552 (Auto-commit after successful NixOS rebuild)
-=======
-    nix-flatpak.url = "github:gmodena/nix-flatpak";
->>>>>>> ba7d552 (Auto-commit after successful NixOS rebuild)
+
   };
 
   outputs = { nixpkgs, self, nix-flatpak, ...} @ inputs:

@@ -44,19 +44,9 @@ in
       "window.titleBarStyle" = "custom"; # needed otherwise vscode crashes, see https://github.com/NixOS/nixpkgs/issues/246509
 
       "window.menuBarVisibility" = "toggle";
-<<<<<<< HEAD
-      "editor.fontFamily" = "'CaskaydiaCove Nerd Font', 'SymbolsNerdFont', 'monospace', monospace";
-      "terminal.integrated.fontFamily" = "'CaskaydiaCove Nerd Font', 'SymbolsNerdFont'";
-      "editor.fontSize" = 16;
-||||||| parent of ba7d552 (Auto-commit after successful NixOS rebuild)
-      "editor.fontFamily" = "'CaskaydiaCove Nerd Font', 'SymbolsNerdFont', 'monospace', monospace";
-      "terminal.integrated.fontFamily" = "'CaskaydiaCove Nerd Font', 'SymbolsNerdFont'";
-      "editor.fontSize" = 18;
-=======
       "editor.fontFamily" = "'FiraCode Nerd Font', 'SymbolsNerdFont', 'monospace', monospace";
       "terminal.integrated.fontFamily" = "'FiraCode Nerd Font', 'SymbolsNerdFont'";
       "editor.fontSize" = 16;
->>>>>>> ba7d552 (Auto-commit after successful NixOS rebuild)
       "workbench.colorTheme" = "Gruvbox Dark Hard";
       "workbench.iconTheme" = "gruvbox-material-icon-theme";
       "material-icon-theme.folders.theme" = "classic";

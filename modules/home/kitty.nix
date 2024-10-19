@@ -12,14 +12,8 @@
 
     settings = {
       confirm_os_window_close = 0;
-<<<<<<< HEAD
-      background_opacity = "0.50";
-||||||| parent of ba7d552 (Auto-commit after successful NixOS rebuild)
-      background_opacity = "0.75";
-=======
       background_opacity = "0.75";
       window_padding_width = 10;
->>>>>>> ba7d552 (Auto-commit after successful NixOS rebuild)
       scrollback_lines = 10000;
       enable_audio_bell = false;
       mouse_hide_wait = 60;

@@ -23,7 +23,7 @@ in
   programs.waybar.settings.mainBar = with custom; {
     position= "bottom";
     layer= "top";
-    height= 28;
+    height= 30;
     margin-top= 0;
     margin-bottom= 0;
     margin-left= 0;
@@ -72,29 +72,6 @@ in
         format = "{icon}";
         on-click= "activate";
         format-icons= {
-<<<<<<< HEAD
-            "1"  = "I";
-            "2"  = "II";
-            "3"  = "III";
-            "4"  = "IV";
-            "5"  = "V";
-            "6"  = "VI";
-            "7"  = "VII";
-            "8"  = "VIII";
-            "9"  = "IX";
-            "10" = "X";
-||||||| parent of ba7d552 (Auto-commit after successful NixOS rebuild)
-            "1"  = "I";
-            "2"  = "II";
-            "3"  = "III";
-            "4"  = "IV";
-            "5"  = "V";
-            "6"  = "VI";
-            "7"  = "VII";
-            "8"  = "VII";
-            "9"  = "IX";
-            "10" = "X";
-=======
             "1"= "I";
             "2"= "II";
             "3"= "III";
@@ -105,7 +82,6 @@ in
             "8"= "VIII";
             "9"= "IX";
             "10"= "X";
->>>>>>> ba7d552 (Auto-commit after successful NixOS rebuild)
             sort-by-number= true;
         };
         persistent-workspaces = {

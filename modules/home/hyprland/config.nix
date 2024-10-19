@@ -6,30 +6,8 @@
       # autostart
       exec-once = [        
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &"
-<<<<<<< HEAD
-
-        "nm-applet &"
-        "poweralertd &"
-        "wl-clip-persist --clipboard both &"
-        "wl-paste --watch cliphist store &"
-        "waybar &"
-        "swaync &"
-        "hyprctl setcursor Bibata-Modern-Ice 24 &"
-        "swww init && swww img $(find ~/Pictures/wallpapers/ -maxdepth 1 -type f) --transition-type none &"
-
-||||||| parent of ba7d552 (Auto-commit after successful NixOS rebuild)
-        "nm-applet &"
-        "wl-clip-persist --clipboard both"
-        "swaybg -m fill -i $(find ~/Pictures/wallpapers/ -maxdepth 1 -type f) &"
-        "hyprctl setcursor Bibata-Modern-Ice 24 &"
-        "poweralertd &"
-        "waybar &"
-        "swaync &"
-        "wl-paste --watch cliphist store &"
-=======
         "hash dbus-update-activation-environment 2>/dev/null &"
         "hyprctl setcursor Bibata-Modern-Ice 24 &"
->>>>>>> ba7d552 (Auto-commit after successful NixOS rebuild)
         "hyprlock"
         "kitty"
         "nm-applet &"
@@ -44,15 +22,7 @@
         "wl-paste --watch cliphist store &"
 
         ## App auto start
-<<<<<<< HEAD
-        # "[workspace 1 silent] floorp"
-        # "[workspace 2 silent] wezterm"
-||||||| parent of ba7d552 (Auto-commit after successful NixOS rebuild)
-        # "[workspace 1 silent] floorp"
-        # "[workspace 2 silent] kitty"
-=======
         "[workspace 1 silent] floorp"
->>>>>>> ba7d552 (Auto-commit after successful NixOS rebuild)
       ];
 
       input = {
@@ -74,8 +44,8 @@
         gaps_in = 0;
         gaps_out = 0;
         border_size = 2;
-        "col.active_border" = "rgb(98971A)";
-        "col.inactive_border" = "rgb(928374)";
+        "col.active_border" = "rgb(98971a) rgb(cc241d) 45deg";
+        "col.inactive_border" = "0x00000000";
         border_part_of_window = false;
         no_border_on_floating = false;
       };
@@ -162,25 +132,6 @@
           "windowsMove, 1, 2, easeinoutsine, slide" # everything in between, moving, dragging, resizing.
 
           # Fade
-<<<<<<< HEAD
-          "fadeIn,      1, 3,   fade_curve"   # fade in (open) -> layers and windows
-          "fadeOut,     1, 3,   fade_curve"   # fade out (close) -> layers and windows
-          "fadeSwitch,  0, 1,   easeOutCirc"  # fade on changing activewindow and its opacity
-          "fadeShadow,  1, 10,  easeOutCirc"  # fade on changing activewindow for shadows
-          "fadeDim,     1, 4,   fluent_decel" # the easing of the dimming of inactive windows
-          # "border,      1, 2.7, easeOutCirc"  # for animating the border's color switch speed
-          # "borderangle, 1, 30,  fluent_decel, once" # for animating the border's gradient angle - styles: once (default), loop
-          "workspaces,  1, 4,   easeOutCubic, fade" # styles: slide, slidevert, fade, slidefade, slidefadevert
-||||||| parent of ba7d552 (Auto-commit after successful NixOS rebuild)
-          "fadeIn,      1, 3,   fade_curve"   # fade in (open) -> layers and windows
-          "fadeOut,     1, 3,   fade_curve"   # fade out (close) -> layers and windows
-          "fadeSwitch,  0, 1,   easeOutCirc"  # fade on changing activewindow and its opacity
-          "fadeShadow,  1, 10,  easeOutCirc"  # fade on changing activewindow for shadows
-          "fadeDim,     1, 4,   fluent_decel" # the easing of the dimming of inactive windows
-          "border,      1, 2.7, easeOutCirc"  # for animating the border's color switch speed
-          "borderangle, 1, 30,  fluent_decel, once" # for animating the border's gradient angle - styles: once (default), loop
-          "workspaces,  1, 4,   easeOutCubic, fade" # styles: slide, slidevert, fade, slidefade, slidefadevert
-=======
           "fadeIn, 1, 3, easeOutCubic" # fade in (open) -> layers and windows
           "fadeOut, 1, 2, easeOutCubic" # fade out (close) -> layers and windows
           "fadeSwitch, 0, 1, easeOutCirc" # fade on changing activewindow and its opacity
@@ -189,70 +140,15 @@
           "border, 1, 2.7, easeOutCirc" # for animating the border's color switch speed
           "borderangle, 1, 30, fluent_decel, once" # for animating the border's gradient angle - styles: once (default), loop
           "workspaces, 1, 4, easeOutCubic, fade" # styles: slide, slidevert, fade, slidefade, slidefadevert
->>>>>>> ba7d552 (Auto-commit after successful NixOS rebuild)
         ];
       };
 
       bind = [
-<<<<<<< HEAD
-        # show keybinds list
-        "$mainMod, F1, exec, show-keybinds"
-
-        # keybindings
-        "$mainMod, Return, exec, wezterm start --always-new-process"
-        "ALT, Return, exec, [float; center] wezterm start --always-new-process"
-        "$mainMod SHIFT, Return, exec, [fullscreen] wezterm start --always-new-process"
-        "$mainMod, B, exec, hyprctl dispatch exec '[workspace 1 silent] floorp'"
-        "$mainMod, Q, killactive,"
-        "$mainMod, F, fullscreen, 0"
-        "$mainMod SHIFT, F, fullscreen, 1"
-        "$mainMod, Space, exec, toggle_float"
-        "$mainMod, D, exec, rofi -show drun || pkill rofi"
-        "$mainMod SHIFT, D, exec, webcord --enable-features=UseOzonePlatform --ozone-platform=wayland"
-        "$mainMod SHIFT, S, exec, hyprctl dispatch exec '[workspace 5 silent] SoundWireServer'"
-        "$mainMod, Escape, exec, swaylock"
-        "ALT, Escape, exec, hyprlock"
-        "$mainMod SHIFT, Escape, exec, power-menu"
-        "$mainMod, P, pseudo,"
-        "$mainMod, X, togglesplit,"
-        "$mainMod, T, exec, toggle_oppacity"
-        "$mainMod, E, exec, nemo"
-        "$mainMod SHIFT, B, exec, toggle_waybar"
-        "$mainMod, C ,exec, hyprpicker -a"
-        "$mainMod, W,exec, wallpaper-picker"
-||||||| parent of ba7d552 (Auto-commit after successful NixOS rebuild)
-        # show keybinds list
-        "$mainMod, F1, exec, show-keybinds"
-
-        # keybindings
-        "$mainMod, Return, exec, kitty"
-        "ALT, Return, exec, kitty --title float_kitty"
-        "$mainMod SHIFT, Return, exec, kitty --start-as=fullscreen -o 'font_size=16'"
-        "$mainMod, B, exec, hyprctl dispatch exec '[workspace 1 silent] floorp'"
-        "$mainMod, Q, killactive,"
-        "$mainMod, F, fullscreen, 0"
-        "$mainMod SHIFT, F, fullscreen, 1"
-        "$mainMod, Space, exec, toggle_float"
-        "$mainMod, D, exec, rofi -show drun || pkill rofi"
-        "$mainMod SHIFT, D, exec, webcord --enable-features=UseOzonePlatform --ozone-platform=wayland"
-        "$mainMod SHIFT, S, exec, hyprctl dispatch exec '[workspace 5 silent] SoundWireServer'"
-        "$mainMod, Escape, exec, swaylock"
-        "ALT, Escape, exec, hyprlock"
-        "$mainMod SHIFT, Escape, exec, power-menu"
-        "$mainMod, P, pseudo,"
-        "$mainMod, J, togglesplit,"
-        "$mainMod, T, exec, toggle_oppacity"
-        "$mainMod, E, exec, nautilus"
-        "$mainMod SHIFT, B, exec, toggle_waybar"
-        "$mainMod, C ,exec, hyprpicker -a"
-        "$mainMod, W,exec, wallpaper-picker"
-=======
         "$mainMod ALT, 0, exec, sudo systemctl poweroff"
         "$mainMod, D, exec, rofi -show drun"
         "$mainMod, F, fullscreen, 1"
         "$mainMod, J, togglesplit,"
         "$mainMod, M, exec, qalculate-gtk"
->>>>>>> ba7d552 (Auto-commit after successful NixOS rebuild)
         "$mainMod, N, exec, swaync-client -t -sw"
         "$mainMod SHIFT, O, exec, toggle_oppacity"
         "$mainMod, P, pseudo,"
@@ -280,27 +176,14 @@
         ", swipe:4:up, exec, rofi -show window"
 
         # screenshot
-<<<<<<< HEAD
-        ",Print, exec, screenshot --copy"
-        "$mainMod, Print, exec, screenshot --save"
-        "$mainMod SHIFT, Print, exec, screenshot --swappy"
-||||||| parent of ba7d552 (Auto-commit after successful NixOS rebuild)
-        "$mainMod, Print, exec, grimblast --notify --cursor --freeze save area ~/Pictures/$(date +'%Y-%m-%d-At-%Ih%Mm%Ss').png"
-        ",Print, exec, grimblast --notify --cursor --freeze copy area"
-=======
         ", Print, exec, grimblast --notify --cursor --freeze save area ~/Pictures/screenshots/$(date +'%Y-%m-%d-At-%Ih%Mm%Ss').png"
         # ",Print, exec, grimblast --notify --cursor --freeze copy area"
->>>>>>> ba7d552 (Auto-commit after successful NixOS rebuild)
 
         # switch focus
         "$mainMod, left, movefocus, l"
         "$mainMod, right, movefocus, r"
         "$mainMod, up, movefocus, u"
         "$mainMod, down, movefocus, d"
-        "$mainMod, h, movefocus, l"
-        "$mainMod, j, movefocus, d"
-        "$mainMod, k, movefocus, u"
-        "$mainMod, l, movefocus, r"
 
         # switch workspace
         "$mainMod, 1, workspace, 1"
@@ -333,28 +216,14 @@
         "$mainMod SHIFT, right, movewindow, r"
         "$mainMod SHIFT, up, movewindow, u"
         "$mainMod SHIFT, down, movewindow, d"
-        "$mainMod SHIFT, h, movewindow, l"
-        "$mainMod SHIFT, j, movewindow, d"
-        "$mainMod SHIFT, k, movewindow, u"
-        "$mainMod SHIFT, l, movewindow, r"
-
         "$mainMod CTRL, left, resizeactive, -80 0"
         "$mainMod CTRL, right, resizeactive, 80 0"
         "$mainMod CTRL, up, resizeactive, 0 -80"
         "$mainMod CTRL, down, resizeactive, 0 80"
-        "$mainMod CTRL, h, resizeactive, -80 0"
-        "$mainMod CTRL, j, resizeactive, 0 80"
-        "$mainMod CTRL, k, resizeactive, 0 -80"
-        "$mainMod CTRL, l, resizeactive, 80 0"
-
         "$mainMod ALT, left, moveactive,  -80 0"
         "$mainMod ALT, right, moveactive, 80 0"
         "$mainMod ALT, up, moveactive, 0 -80"
         "$mainMod ALT, down, moveactive, 0 80"
-        "$mainMod ALT, h, moveactive,  -80 0"
-        "$mainMod ALT, j, moveactive, 0 80"
-        "$mainMod ALT, k, moveactive, 0 -80"
-        "$mainMod ALT, l, moveactive, 80 0"
 
         # media and volume controls
         ",XF86AudioRaiseVolume,exec, pamixer -i 2"
@@ -386,23 +255,11 @@
       ];
 
       # windowrule
-<<<<<<< HEAD
-      windowrule = [
-        "float,Viewnior"
-        "center,Viewnior"
-        "size 1200 800,Viewnior"
-||||||| parent of ba7d552 (Auto-commit after successful NixOS rebuild)
-      windowrule = [
-        "float,qView"
-        "center,qView"
-        "size 1200 725,qView"
-=======
       windowrule = [        
         "tile,Aseprite"
         "float,audacious"
         "float,Firefox — Sharing Indicator"
         "move 0 0,Firefox — Sharing Indicator"
->>>>>>> ba7d552 (Auto-commit after successful NixOS rebuild)
         "float,imv"
         "center,imv"
         "size 90% 85%,imv"
@@ -413,22 +270,7 @@
         "idleinhibit focus,mpv"
         "float,mpv"
         "center,mpv"
-<<<<<<< HEAD
-        "tile,Aseprite"
-        "size 1200 725,mpv"
-        "float,audacious"
-        "pin,rofi"
-||||||| parent of ba7d552 (Auto-commit after successful NixOS rebuild)
-        "tile,Aseprite"
-        "size 1200 725,mpv"
-        "float,title:^(float_kitty)$"
-        "center,title:^(float_kitty)$"
-        "size 950 600,title:^(float_kitty)$"
-        "float,audacious"
-        "pin,rofi"
-=======
         "size 90% 85%,mpv"
->>>>>>> ba7d552 (Auto-commit after successful NixOS rebuild)
         "tile, neovide"
         "float,qalculate-gtk"
         "center,qalculate-gtk"

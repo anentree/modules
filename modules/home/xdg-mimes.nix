@@ -5,19 +5,16 @@ let
   defaultApps = {
     browser = [ "floorp.desktop" ];
     text = [ "org.gnome.TextEditor.desktop" ];
-<<<<<<< HEAD
-    image = [ "viewnior.desktop" ];
-||||||| parent of ba7d552 (Auto-commit after successful NixOS rebuild)
-    image = [ "imv.desktop" ];
-=======
     image = [ "com.interversehq.qView.desktop" ];
->>>>>>> ba7d552 (Auto-commit after successful NixOS rebuild)
     audio = [ "mpv.desktop" ];
     video = [ "mpv.desktop" ];
-    directory = [ "nemo.desktop" ];
+    directory = [
+      "nautilus.desktop"
+      "org.gnome.Nautilus.desktop"
+    ];
     office = [ "libreoffice.desktop" ];
     pdf = [ "org.gnome.Evince.desktop" ];
-    terminal = [ "wezterm.desktop" ];
+    terminal = [ "kitty.desktop" ];
     archive = [ "org.gnome.FileRoller.desktop" ];
   };
 

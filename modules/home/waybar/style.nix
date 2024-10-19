@@ -14,7 +14,6 @@ let custom = {
   magenta = "#B16286";
   cyant = "#689D6A";
   orange = "#D65D0E";
-  orange_bright = "#FE8019";
   opacity = "1";
   indicator_height = "2px";
 };
@@ -34,14 +33,7 @@ in
     }
 
     window#waybar {
-<<<<<<< HEAD
-      background: #282828;
-      border-top: 1px solid #928374;
-||||||| parent of ba7d552 (Auto-commit after successful NixOS rebuild)
-      background: #282828;
-=======
       background: ${background_0};
->>>>>>> ba7d552 (Auto-commit after successful NixOS rebuild)
     }
 
     tooltip {
@@ -61,16 +53,19 @@ in
       padding-left:  5px;
       padding-right: 5px;
       margin-right: 10px;
+      border-bottom: ${indicator_height} solid ${background_0};
     }
     #workspaces button.empty {
       color: ${text_color};
     }
     #workspaces button.active {
-      color: ${orange_bright};
+      color: ${yellow};
+      border-bottom: ${indicator_height} solid ${yellow};
     }
 
     #clock {
       color: ${text_color};
+      border-bottom: ${indicator_height} solid ${background_0};
     }
 
     #tray {
@@ -92,15 +87,33 @@ in
       margin-right: 10px;
       color: ${text_color};
     }
-    
+
+    #cpu {
+      border-bottom: ${indicator_height} solid ${green};
+    }
+    #memory {
+      border-bottom: ${indicator_height} solid ${cyant};
+    }
+    #disk {
+      border-bottom: ${indicator_height} solid ${orange};
+    }
+
     #pulseaudio {
       margin-left: 15px;
+      border-bottom: ${indicator_height} solid ${blue};
     }
-    
+    #network {
+      border-bottom: ${indicator_height} solid ${magenta};
+    }
+    #battery {
+      border-bottom: ${indicator_height} solid ${yellow};
+    }
+
     #custom-notification {
       margin-left: 15px;
       padding-right: 2px;
       margin-right: 5px;
+      border-bottom: ${indicator_height} solid ${red};
     }
 
     #custom-launcher {
@@ -109,6 +122,7 @@ in
       font-weight: bold;
       margin-left: 15px;
       padding-right: 10px;
+      border-bottom: ${indicator_height} solid ${background_0};
     }
   '';
 }
