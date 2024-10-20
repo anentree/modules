@@ -16,6 +16,7 @@ in
     protonvpn-gui
     teams-for-linux
     wpsoffice
+    zoom-us
     # for disk reading
       ntfs3g
       exfat
