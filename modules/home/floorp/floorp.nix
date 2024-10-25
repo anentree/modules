@@ -21,16 +21,5 @@
     MimeType=text/html;text/xml;application/xhtml+xml;application/vnd.mozilla.xul+xml;text/mml;x-scheme-handler/http;x-scheme-handler/https;
     StartupNotify=true
   '';
-
-  programs = {
-    brave = {
-      enable = true;
-      commandLineArgs = [
-        "--enable-features=TouchpadOverscrollHistoryNavigation"
-        "--ozone-platform=wayland"
-        "--disable-features=TabHoverCards"
-      ];
-    };  
-  };
 }
 

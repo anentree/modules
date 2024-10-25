@@ -22,7 +22,11 @@
       RestartSec = 3;
     };
   };
-
+  
+  networking.firewall = {
+    allowedTCPPorts = [ 443 ];  # HTTPS
+    allowedUDPPorts = [ 443 ];  # QUIC
+  };
   environment.systemPackages = [ pkgs.onedrive pkgs.coreutils pkgs.procps ];
 }
 

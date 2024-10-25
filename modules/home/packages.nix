@@ -7,9 +7,12 @@ in
     _2048
 
     ## personally added
+    deja-dup # simple backup tool
     keyd # remaps keys. see services.nix
+    libsForQt5.filelight # show disk usage and delee unused files
     libsForQt5.gwenview
     kalker # math in terminal
+    mission-center # system monitor
     monitor # system monitor
     neofetch
     pdfarranger

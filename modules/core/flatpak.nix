@@ -5,9 +5,10 @@
   services.flatpak = {
     enable = true;
     packages = [
+      "com.beavernotes.beavernotes"
+      "org.fedoraproject.MediaWriter"
       "com.github.tchx84.Flatseal"
       "md.obsidian.Obsidian"
-      "io.github.zen_browser.zen"
     ];
     overrides = {
       global = {
