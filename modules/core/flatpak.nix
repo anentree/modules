@@ -6,6 +6,7 @@
     enable = true;
     packages = [
       "com.beavernotes.beavernotes"
+      "one.ablaze.floorp"
       "org.fedoraproject.MediaWriter"
       "com.github.tchx84.Flatseal"
       "md.obsidian.Obsidian"
