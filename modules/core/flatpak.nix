@@ -6,7 +6,6 @@
     enable = true;
     packages = [
       "com.beavernotes.beavernotes"
-      "one.ablaze.floorp"
       "org.fedoraproject.MediaWriter"
       "com.github.tchx84.Flatseal"
       "md.obsidian.Obsidian"
@@ -17,5 +16,6 @@
         Context.sockets = ["wayland" "!x11" "!fallback-x11"];
       };
     };
+    uninstallUnmanaged = true;
   };
 }

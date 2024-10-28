@@ -5,7 +5,7 @@
     ./btop.nix                      # resouces monitor 
     ./discord/discord.nix           # discord with catppuccin theme
     ./fastfetch.nix                 # fetch tool
-    ./floorp/floorp.nix             # firefox based browser
+    # ./floorp/floorp.nix             # firefox based browser
     ./fzf.nix                       # fuzzy finder
     ./git.nix                       # version control
     ./gnome.nix                     # gnome apps
