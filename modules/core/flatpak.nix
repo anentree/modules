@@ -9,6 +9,7 @@
       "org.fedoraproject.MediaWriter"
       "com.github.tchx84.Flatseal"
       "md.obsidian.Obsidian"
+      # "one.ablaze.floorp"
     ];
     overrides = {
       global = {

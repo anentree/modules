@@ -8,6 +8,7 @@ in
 
     ## personally added
     deja-dup # simple backup tool
+    firefox
     keyd # remaps keys. see services.nix
     libsForQt5.filelight # show disk usage and delee unused files
     libsForQt5.gwenview
