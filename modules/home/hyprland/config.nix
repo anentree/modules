@@ -1,5 +1,10 @@
-{ ... }: 
-{
+{ inputs, ... }: 
+
+{ 
+  imports = if builtins.getEnv "HOST" == "desktop"
+    then [ ./config.desktop.nix ]
+    else [ ./config.laptop.nix ];
+   
   wayland.windowManager.hyprland = {
     settings = {
       
@@ -22,12 +27,11 @@
         "wl-paste --watch cliphist store &"
 
         ## App auto start
-        "[workspace 1 silent] floorp"
+#        "[workspace 1 silent] floorp"
       ];
 
       input = {
         kb_layout = "us";
-        # kb_options ="caps:super"; 
         numlock_by_default = true;
         follow_mouse = 1; # changed from 0 to 1
         float_switch_override_focus = 0;
@@ -186,30 +190,30 @@
         "$mainMod, down, movefocus, d"
 
         # switch workspace
-        "$mainMod, 1, workspace, 1"
-        "$mainMod, 2, workspace, 2"
-        "$mainMod, 3, workspace, 3"
-        "$mainMod, 4, workspace, 4"
-        "$mainMod, 5, workspace, 5"
-        "$mainMod, 6, workspace, 6"
-        "$mainMod, 7, workspace, 7"
-        "$mainMod, 8, workspace, 8"
-        "$mainMod, 9, workspace, 9"
-        "$mainMod, 0, workspace, 10"
-        "$mainMod, c, workspace, empty"
+#        "$mainMod, 1, workspace, 1"
+#        "$mainMod, 2, workspace, 2"
+#        "$mainMod, 3, workspace, 3"
+#        "$mainMod, 4, workspace, 4"
+#        "$mainMod, 5, workspace, 5"
+#        "$mainMod, 6, workspace, 6"
+#        "$mainMod, 7, workspace, 7"
+#        "$mainMod, 8, workspace, 8"
+#        "$mainMod, 9, workspace, 9"
+#        "$mainMod, 0, workspace, 10"
+#        "$mainMod, c, workspace, empty"
 
         # same as above, but switch to the workspace
-        "$mainMod SHIFT, 1, movetoworkspace, 1" # movetoworkspace
-        "$mainMod SHIFT, 2, movetoworkspace, 2"
-        "$mainMod SHIFT, 3, movetoworkspace, 3"
-        "$mainMod SHIFT, 4, movetoworkspace, 4"
-        "$mainMod SHIFT, 5, movetoworkspace, 5"
-        "$mainMod SHIFT, 6, movetoworkspace, 6"
-        "$mainMod SHIFT, 7, movetoworkspace, 7"
-        "$mainMod SHIFT, 8, movetoworkspace, 8"
-        "$mainMod SHIFT, 9, movetoworkspace, 9"
-        "$mainMod SHIFT, 0, movetoworkspace, 10"
-        "$mainMod SHIFT, c, movetoworkspace, empty"
+#        "$mainMod SHIFT, 1, movetoworkspace, 1" # movetoworkspace
+#        "$mainMod SHIFT, 2, movetoworkspace, 2"
+#        "$mainMod SHIFT, 3, movetoworkspace, 3"
+#        "$mainMod SHIFT, 4, movetoworkspace, 4"
+#        "$mainMod SHIFT, 5, movetoworkspace, 5"
+#        "$mainMod SHIFT, 6, movetoworkspace, 6"
+#        "$mainMod SHIFT, 7, movetoworkspace, 7"
+#        "$mainMod SHIFT, 8, movetoworkspace, 8"
+#        "$mainMod SHIFT, 9, movetoworkspace, 9"
+#        "$mainMod SHIFT, 0, movetoworkspace, 10"
+#        "$mainMod SHIFT, c, movetoworkspace, empty"
 
         # window control
         "$mainMod SHIFT, left, movewindow, l"
@@ -341,8 +345,6 @@
     };
 
     extraConfig = "
-      monitor=,preferred,auto,auto
-
       xwayland {
         force_zero_scaling = true
       }

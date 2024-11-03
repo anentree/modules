@@ -18,7 +18,7 @@
               capslock = "overload(meta, esc)";
               backslash = "overload(control, backslash)";
               enter = "overload(meta, enter)";
-              rightalt = "layer(meta)";
+              # rightalt = "layer(meta)";
       };
     };
     printing = {

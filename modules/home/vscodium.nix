@@ -115,6 +115,16 @@ in
         key = "ctrl+s";
         command = "workbench.action.files.saveFiles";
       }
+      {
+        key = "ctrl+c";
+        command = "editor.action.clipboardCopyAction";
+        when = "textInputFocus";
+      }
+      {
+        key = "ctrl+v";
+        command = "editor.action.clipboardPasteAction";
+        when = "textInputFocus && !editorReadonly";
+      }
     ];
   };
 }
