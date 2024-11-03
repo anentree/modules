@@ -1,7 +1,7 @@
-{ inputs, ... }: 
+{ inputs, config, lib, pkgs, host, ... }: 
 
 { 
-  imports = if builtins.getEnv "HOST" == "desktop"
+  imports = if (host == "desktop")
     then [ ./config.desktop.nix ]
     else [ ./config.laptop.nix ];
    
@@ -27,7 +27,7 @@
         "wl-paste --watch cliphist store &"
 
         ## App auto start
-#        "[workspace 1 silent] floorp"
+        "[workspace 1 silent] floorp"
       ];
 
       input = {
