@@ -19,10 +19,11 @@ let custom = {
 };
 in 
 {
+  _module.args.custom = custom;
   programs.waybar.settings.mainBar = with custom; {
     position= "bottom";
     layer= "top";
-    height= 28;
+    height= 30;
     margin-top= 0;
     margin-bottom= 0;
     margin-left= 0;
@@ -44,58 +45,86 @@ in
         "battery"
         "custom/notification"
     ];
-    clock= {
-        calendar = {
-          format = { today = "<span color='#98971A'><b>{}</b></span>"; };
+    clock = {
+      format = if (host == "desktop") 
+         then "{:%a, %b %d, %I:%M}" 
+         else "{:%b %d, %I:%M}";
+      tooltip = true;
+      tooltip-format = "<tt><small>{calendar}</small></tt>";
+      calendar = {
+        mode = "month";
+        format = {
+          months = "<span color='${blue}'><b>{}</b></span>";
+          days = "<span color='${text_color}'>{}</span>";
+          weeks = "<span color='${orange}'><b>W{}</b></span>";
+          weekdays = "<span color='${yellow}'><b>{}</b></span>";
+          today = "<span color='${green}'><b><u>{}</u></b></span>";
         };
-        format = "  {:%H:%M}";
-        tooltip= "true";
-        tooltip-format= "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-        format-alt= "  {:%d/%m}";
+      };
+      actions = {
+        on-click = "shift_down";
+        on-click-right = "shift_up";
+      };
     };
     "hyprland/workspaces"= {
         active-only= false;
         disable-scroll= true;
         format = "{icon}";
         on-click= "activate";
-        format-icons= {
-            "1"  = "I";
-            "2"  = "II";
-            "3"  = "III";
-            "4"  = "IV";
-            "5"  = "V";
-            "6"  = "VI";
-            "7"  = "VII";
-            "8"  = "VIII";
-            "9"  = "IX";
-            "10" = "X";
-            sort-by-number= true;
-        };
-        persistent-workspaces = {
+        format-icons = if (host == "desktop")
+          then {
+            "1" = "A1";
+            "2" = "A2";
+            "3" = "B3";
+            "4" = "B4";
+            "5" = "C5";
+            "6" = "C6";
+          }
+          else {
+            "1" = "1";
+            "2" = "2";
+            "3" = "3";
+            "4" = "4";
+            "5" = "5";
+            "6" = "6";
+            "7" = "7";
+            "8" = "8";
+            "9" = "9";
+            "10" = "10";
+          }; 
+             
+        persistent-workspaces = if (host == "desktop")
+          then {
             "1"= [];
             "2"= [];
             "3"= [];
             "4"= [];
             "5"= [];
-        };
+            "6"= [];
+          }
+          else {
+            "1"= [];
+            "2"= [];
+            "3"= [];
+            "4"= [];
+          };
     };
     cpu= {
         format= "<span foreground='${green}'> </span> {usage}%";
-        format-alt= "<span foreground='${green}'> </span> {avg_frequency} GHz";
+        # format-alt= "<span foreground='${green}'> </span> {avg_frequency} GHz";
         interval= 2;
-        on-click-right = "kitty --override font_size=14 --title float_kitty btop";
+        on-click= "com.github.stsdc.monitor";
     };
     memory= {
         format= "<span foreground='${cyant}'>󰟜 </span>{}%";
         format-alt= "<span foreground='${cyant}'>󰟜 </span>{used} GiB"; # 
         interval= 2;
-        on-click-right = "kitty --override font_size=14 --title float_kitty btop";
     };
     disk = {
         # path = "/";
         format = "<span foreground='${orange}'>󰋊 </span>{percentage_used}%";
         interval= 60;
-        on-click-right = "kitty --override font_size=14 --title float_kitty btop";
+        on-click= "gnome-disks";
     };
     network = {
         format-wifi = "<span foreground='${magenta}'> </span> {signalStrength}%";
@@ -108,14 +137,14 @@ in
         icon-size= 20;
         spacing= 8;
     };
-    pulseaudio= {
+    pulseaudio = {
         format= "{icon} {volume}%";
         format-muted= "<span foreground='${blue}'> </span> {volume}%";
         format-icons= {
             default= ["<span foreground='${blue}'> </span>"];
         };
-        scroll-step= 2;
-        on-click= "pamixer -t";
+        scroll-step= 5;
+        on-click= "pavucontrol";
     };
     battery = {
         format = "<span foreground='${yellow}'>{icon}</span> {capacity}%";
@@ -125,7 +154,7 @@ in
         format-warning = "<span foreground='${yellow}'> </span>{capacity}%";
         interval = 5;
         states = {
-            warning = 20;
+            warning = 10;
         };
         format-time = "{H}h{M}m";
         tooltip = true;

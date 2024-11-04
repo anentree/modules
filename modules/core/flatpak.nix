@@ -5,8 +5,12 @@
   services.flatpak = {
     enable = true;
     packages = [
-      # "io.github.zen_browser.zen"
+      "com.beavernotes.beavernotes"
+      "org.fedoraproject.MediaWriter"
       "com.github.tchx84.Flatseal"
+      "md.obsidian.Obsidian"
+      # "one.ablaze.floorp"
+      "com.protonvpn.www"
     ];
     overrides = {
       global = {
@@ -14,5 +18,6 @@
         Context.sockets = ["wayland" "!x11" "!fallback-x11"];
       };
     };
+    uninstallUnmanaged = true;
   };
 }
