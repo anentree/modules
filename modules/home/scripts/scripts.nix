@@ -32,13 +32,8 @@
   power-menu = pkgs.writeScriptBin "power-menu" (builtins.readFile ./scripts/power-menu.sh);
   
   nbuildpush = pkgs.writeScriptBin "nbuildpush" (builtins.readFile ./scripts/nbuildpush.sh);
+  nbuildpush-force = pkgs.writeScriptBin "nbuildpush-force" (builtins.readFile ./scripts/nbuildpush-force.sh);
   resize-sws = pkgs.writeScriptBin "resize-sws" (builtins.readFile ./scripts/resize-sws.sh);
-  # nixos_rebuild_and_push = pkgs.writeScriptBin "nixos-rebuild-and-push" ''
-  #  exec ${wall_change_script}/bin/wall-change nixos-rebuild-and-push "$@"
-  # '';
-  # resize_sws = pkgs.writeScriptBin "resize-sws" ''
-  #   exec ${wall_change_script}/bin/wall-change resize-sws
-  # '';
   
 in {
   home.packages = with pkgs; [
@@ -75,6 +70,7 @@ in {
     power-menu
     
     nbuildpush
+    nbuildpush-force
     resize-sws
   ];
 }
