@@ -3,12 +3,12 @@
   wayland.windowManager.hyprland = {
     settings = {  
       workspace = [
-        "1,name:A1,monitor:DP-1"
-        "2,name:A2,monitor:DP-1"
-        "3,name:B3,monitor:DP-2"
-        "4,name:B4,monitor:DP-2"
-        "5,name:C5,monitor:HDMI-A-1"
-        "6,name:C6,monitor:HDMI-A-1"
+        "1,name:1A,monitor:DP-1"
+        "2,name:2A,monitor:DP-1"
+        "3,name:3B,monitor:DP-2"
+        "4,name:4B,monitor:DP-2"
+        "5,name:5C,monitor:HDMI-A-1"
+        "6,name:6C,monitor:HDMI-A-1"
       ];
 
       bind = [

@@ -1,4 +1,4 @@
-{ self, pkgs, lib, inputs, ...}: 
+{ self, pkgs, lib, inputs, pdfstudioFlake, ...}: 
 {
   # imports = [ inputs.nix-gaming.nixosModules.default ];
   nix = {
@@ -16,6 +16,10 @@
   };
 
   environment.systemPackages = with pkgs; [
+    (import pdfstudioFlake { 
+      system = "x86_64-linux"; 
+      config.allowUnfree = true; 
+    }).pdfstudio2024
     wget
     git
     # for printing and cups
