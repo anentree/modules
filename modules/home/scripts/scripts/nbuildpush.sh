@@ -2,7 +2,7 @@
 
 nbuildpush() {
     # Directory of your NixOS configuration
-    CONFIG_DIR="/home/neo/nixos-config/modules"
+    CONFIG_DIR="/home/neo/nixos-config/"
 
     # Perform NixOS rebuild
     if sudo nixos-rebuild switch --flake "$CONFIG_DIR#$1" --option show-trace true; then
