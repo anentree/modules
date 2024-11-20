@@ -30,10 +30,29 @@
         "$mainMod SHIFT, 0, movetoworkspace, 10"
         "$mainMod SHIFT, c, movetoworkspace, empty"
       ];
+      
+      gestures = {
+        workspace_swipe = true;
+        workspace_swipe_fingers = 3;
+        workspace_swipe_distance = 50;
+        workspace_swipe_invert = true;
+        workspace_swipe_min_speed_to_force = 20;
+        workspace_swipe_cancel_ratio = 0.5;
+        workspace_swipe_create_new = true;
+      };      
     };
 
     extraConfig = ''
       monitor=,preferred,auto,auto
+      monitor=HDMI-A-1,preferred,auto-left,auto
+      monitor=eDP-1,preferred,auto,auto
+      
+      # Workspace assignments
+      workspace=HDMI-A-1,1
+      workspace=eDP-1,2
+      
+      # Default workspace for laptop screen when HDMI is not connected
+      exec-once = hyprctl dispatch workspace 1
     '';
   };
 }

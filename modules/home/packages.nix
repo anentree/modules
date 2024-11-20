@@ -19,7 +19,6 @@ in
     pdfarranger
 #    protonvpn-gui # made into flatpak
     teams-for-linux
-    # pdfstudio2024
     zoom-us
     # for disk reading
       ntfs3g
