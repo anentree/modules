@@ -5,7 +5,7 @@ nbuildpush() {
     CONFIG_DIR="/home/neo/nixos-config/modules"
 
     # Perform NixOS rebuild
-    if sudo nixos-rebuild switch --flake "$CONFIG_DIR#$1" --option show-trace true; then
+    if sudo nixos-rebuild switch --flake "/home/neo/nixos-config#$1" --option show-trace true; then
         echo "NixOS rebuild successful. Pushing changes..."
         cd "$CONFIG_DIR" || exit
         git add .
