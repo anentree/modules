@@ -1,14 +1,15 @@
 #!/usr/bin/env bash
 
 nbuildpush-force() {
-    # Change to the parent directory where flake.nix exists
-    cd "/home/neo/nixos-config" || exit
+    # Main config directory containing flake.nix
+    FLAKE_DIR="/home/neo/nixos-config"
+    # Modules directory for git operations
+    MODULES_DIR="/home/neo/nixos-config/modules"
 
-    # Perform NixOS rebuild from the correct directory
-    if sudo nixos-rebuild switch --flake ".#$1" --option show-trace true; then
+    # Perform NixOS rebuild using the main config directory
+    if sudo nixos-rebuild switch --flake "$FLAKE_DIR#$1" --option show-trace true; then
         echo "NixOS rebuild successful. Pushing changes..."
-        # Change to modules directory for git operations
-        cd "modules" || exit
+        cd "$MODULES_DIR" || exit
         git add .
         git commit -m "Auto-commit after successful NixOS rebuild"
         git push -f origin main

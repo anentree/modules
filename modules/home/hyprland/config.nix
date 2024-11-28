@@ -10,7 +10,7 @@
       
       # autostart
       exec-once = [        
-        "Beaver-notes"
+        "obsidian"
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &"
         "hash dbus-update-activation-environment 2>/dev/null &"
         "hyprctl setcursor Bibata-Modern-Ice 24 &"
@@ -101,13 +101,14 @@
           xray = true;
         };
 
-        drop_shadow = true;
-
-        shadow_ignore_window = true;
-        shadow_offset = "0 2";
-        shadow_range = 20;
-        shadow_render_power = 3;
-        "col.shadow" = "rgba(00000055)";
+        shadow = {
+          enabled = true;
+          ignore_window = true;
+          range = 20;
+          render_power = 3;
+          offset = "0 2";
+          color = "rgba(00000055)";
+        };
       };
       
       animations = {
@@ -140,8 +141,8 @@
 
       bind = [
         "$mainMod ALT, 0, exec, sudo systemctl poweroff"
-        "$mainMod, B, togglespecialworkspace, Beaver-notes"
-        "$mainMod, B, exec, resize-sws"
+        "$mainMod, O, togglespecialworkspace, obsidian"
+        "$mainMod, O, exec, resize-sws"
         "$mainMod, D, exec, rofi -show drun"
         "$mainMod, F, fullscreen, 1"
         "$mainMod, J, togglesplit,"
@@ -229,10 +230,10 @@
       windowrule = [        
         "tile,Aseprite"
         "float,audacious"
-        "float,^(Beaver-notes)$"
-        "center,^(Beaver-notes)$"
-        "size 90% 85%,^(Beaver-notes)$"
-        "workspace special:Beaver-notes silent,^(Beaver-notes)$"
+        "float,^(obsidian)$"
+        "center,^(obsidian)$"
+        "size 90% 85%,^(obsidian)$"
+        "workspace special:obsidian silent,^(obsidian)$"
         "float,Firefox — Sharing Indicator"
         "move 0 0,Firefox — Sharing Indicator"
         "float,imv"
