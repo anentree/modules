@@ -13,6 +13,7 @@ in
     libsForQt5.filelight # show disk usage and delee unused files
     libsForQt5.gwenview
     kalker # math in terminal
+    jre # for librebase to work
     mission-center # system monitor
     monitor # system monitor
     neofetch

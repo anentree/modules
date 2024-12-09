@@ -1,4 +1,4 @@
-{ inputs, config, lib, pkgs, host, ... }: 
+{ host, ... }: 
 
 { 
   imports = if (host == "desktop")
@@ -10,7 +10,7 @@
       
       # autostart
       exec-once = [        
-        "obsidian"
+        "flatpak run md.obsidian.Obsidian"
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &"
         "hash dbus-update-activation-environment 2>/dev/null &"
         "hyprctl setcursor Bibata-Modern-Ice 24 &"

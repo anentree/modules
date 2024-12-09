@@ -114,6 +114,7 @@ in
         # format-alt= "<span foreground='${green}'> </span> {avg_frequency} GHz";
         interval= 2;
         on-click= "com.github.stsdc.monitor";
+        # I couldn't get this to work despite honest effort on-click= "io.missioncenter.MissionCenter";
     };
     memory= {
         format= "<span foreground='${cyant}'>󰟜 </span>{}%";

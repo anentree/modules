@@ -5,11 +5,9 @@
   services.flatpak = {
     enable = true;
     packages = [
-      "com.beavernotes.beavernotes"
       "org.fedoraproject.MediaWriter"
       "com.github.tchx84.Flatseal"
       "md.obsidian.Obsidian"
-      # "one.ablaze.floorp"
       "com.protonvpn.www"
     ];
     overrides = {
