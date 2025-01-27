@@ -17,10 +17,12 @@ in
     mission-center # system monitor
     monitor # system monitor
     neofetch
+    onlyoffice-desktopeditors
     pdfarranger
-#    protonvpn-gui # made into flatpak
+    # protonvpn-gui # made into flatpak
     teams-for-linux
     zoom-us
+    wlogout # for shutdown hyprland bind to work
     # for disk reading
       ntfs3g
       exfat

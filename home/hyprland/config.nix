@@ -140,7 +140,9 @@
       };
 
       bind = [
-        "$mainMod ALT, 0, exec, sudo systemctl poweroff"
+        "ALT, Escape, exec, swaylock"
+        "ALT, Space, exec, ulauncher"
+        "$mainMod ALT, 0, exec, poweroff"
         "$mainMod, O, togglespecialworkspace, obsidian"
         "$mainMod, O, exec, resize-sws"
         "$mainMod, D, exec, rofi -show drun"
@@ -160,7 +162,6 @@
         "$mainMod, Return, exec, resize-sws"
         "$mainMod SHIFT, Return, exec, kitty --start-as=fullscreen -o 'font_size=16'"
         "$mainMod, Space, exec, toggle_float"
-        "ALT, Escape, exec, swaylock"
         "$mainMod, Escape, exec, hyprlock"
         "$mainMod SHIFT, Escape, exec, power-menu"
         "$mainMod SHIFT, V, exec, vm-start"
