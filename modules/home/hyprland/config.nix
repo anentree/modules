@@ -1,4 +1,4 @@
-{ inputs, config, lib, pkgs, host, ... }: 
+{ host, ... }: 
 
 { 
   imports = if (host == "desktop")
@@ -10,6 +10,7 @@
       
       # autostart
       exec-once = [        
+        "flatpak run md.obsidian.Obsidian"
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &"
         "hash dbus-update-activation-environment 2>/dev/null &"
         "hyprctl setcursor Bibata-Modern-Ice 24 &"
@@ -100,23 +101,14 @@
           xray = true;
         };
 
-        drop_shadow = true;
-
-        shadow_ignore_window = true;
-        shadow_offset = "0 2";
-        shadow_range = 20;
-        shadow_render_power = 3;
-        "col.shadow" = "rgba(00000055)";
-      };
-
-      gestures = {
-        workspace_swipe = true;
-        workspace_swipe_fingers = 3;
-        workspace_swipe_distance = 50;
-        workspace_swipe_invert = true;
-        workspace_swipe_min_speed_to_force = 20;
-        workspace_swipe_cancel_ratio = 0.5;
-        workspace_swipe_create_new = true;
+        shadow = {
+          enabled = true;
+          ignore_window = true;
+          range = 20;
+          render_power = 3;
+          offset = "0 2";
+          color = "rgba(00000055)";
+        };
       };
       
       animations = {
@@ -148,7 +140,11 @@
       };
 
       bind = [
-        "$mainMod ALT, 0, exec, sudo systemctl poweroff"
+        "ALT, Escape, exec, swaylock"
+        "ALT, Space, exec, ulauncher"
+        "$mainMod ALT, 0, exec, poweroff"
+        "$mainMod, O, togglespecialworkspace, obsidian"
+        "$mainMod, O, exec, resize-sws"
         "$mainMod, D, exec, rofi -show drun"
         "$mainMod, F, fullscreen, 1"
         "$mainMod, J, togglesplit,"
@@ -166,7 +162,6 @@
         "$mainMod, Return, exec, resize-sws"
         "$mainMod SHIFT, Return, exec, kitty --start-as=fullscreen -o 'font_size=16'"
         "$mainMod, Space, exec, toggle_float"
-        "ALT, Escape, exec, swaylock"
         "$mainMod, Escape, exec, hyprlock"
         "$mainMod SHIFT, Escape, exec, power-menu"
         "$mainMod SHIFT, V, exec, vm-start"
@@ -188,32 +183,6 @@
         "$mainMod, right, movefocus, r"
         "$mainMod, up, movefocus, u"
         "$mainMod, down, movefocus, d"
-
-        # switch workspace
-#        "$mainMod, 1, workspace, 1"
-#        "$mainMod, 2, workspace, 2"
-#        "$mainMod, 3, workspace, 3"
-#        "$mainMod, 4, workspace, 4"
-#        "$mainMod, 5, workspace, 5"
-#        "$mainMod, 6, workspace, 6"
-#        "$mainMod, 7, workspace, 7"
-#        "$mainMod, 8, workspace, 8"
-#        "$mainMod, 9, workspace, 9"
-#        "$mainMod, 0, workspace, 10"
-#        "$mainMod, c, workspace, empty"
-
-        # same as above, but switch to the workspace
-#        "$mainMod SHIFT, 1, movetoworkspace, 1" # movetoworkspace
-#        "$mainMod SHIFT, 2, movetoworkspace, 2"
-#        "$mainMod SHIFT, 3, movetoworkspace, 3"
-#        "$mainMod SHIFT, 4, movetoworkspace, 4"
-#        "$mainMod SHIFT, 5, movetoworkspace, 5"
-#        "$mainMod SHIFT, 6, movetoworkspace, 6"
-#        "$mainMod SHIFT, 7, movetoworkspace, 7"
-#        "$mainMod SHIFT, 8, movetoworkspace, 8"
-#        "$mainMod SHIFT, 9, movetoworkspace, 9"
-#        "$mainMod SHIFT, 0, movetoworkspace, 10"
-#        "$mainMod SHIFT, c, movetoworkspace, empty"
 
         # window control
         "$mainMod SHIFT, left, movewindow, l"
@@ -262,6 +231,10 @@
       windowrule = [        
         "tile,Aseprite"
         "float,audacious"
+        "float,^(obsidian)$"
+        "center,^(obsidian)$"
+        "size 90% 85%,^(obsidian)$"
+        "workspace special:obsidian silent,^(obsidian)$"
         "float,Firefox — Sharing Indicator"
         "move 0 0,Firefox — Sharing Indicator"
         "float,imv"

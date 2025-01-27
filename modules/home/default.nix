@@ -21,6 +21,7 @@
     ./starship.nix                  # shell prompt
     ./swaylock.nix                  # lock screen
     ./swaync/swaync.nix             # notification deamon
+    ./ulauncher.nix                 # better search than rofi
     ./vscodium.nix                  # vscode forck
     ./waybar                        # status bar
     ./xdg-mimes.nix                 # xdg config
