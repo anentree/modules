@@ -1,4 +1,4 @@
-{ inputs, config, lib, pkgs, host, ... }: 
+{ host, ... }: 
 
 { 
   imports = if (host == "desktop")
@@ -10,7 +10,7 @@
       
       # autostart
       exec-once = [        
-        "obsidian"
+        "flatpak run md.obsidian.Obsidian"
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &"
         "hash dbus-update-activation-environment 2>/dev/null &"
         "hyprctl setcursor Bibata-Modern-Ice 24 &"
@@ -23,6 +23,7 @@
         "swaync &"
         "systemctl --user import-environment &"
         "teams-for-linux"
+        "ulauncher --hide-window"
         "waybar &"
         "wl-clip-persist --clipboard both"
         "wl-paste --watch cliphist store &"
@@ -140,7 +141,9 @@
       };
 
       bind = [
-        "$mainMod ALT, 0, exec, sudo systemctl poweroff"
+        "ALT, Escape, exec, swaylock"
+        "ALT, Space, exec, ulauncher-toggle"
+        "$mainMod ALT, 0, exec, poweroff"
         "$mainMod, O, togglespecialworkspace, obsidian"
         "$mainMod, O, exec, resize-sws"
         "$mainMod, D, exec, rofi -show drun"
@@ -160,7 +163,6 @@
         "$mainMod, Return, exec, resize-sws"
         "$mainMod SHIFT, Return, exec, kitty --start-as=fullscreen -o 'font_size=16'"
         "$mainMod, Space, exec, toggle_float"
-        "ALT, Escape, exec, swaylock"
         "$mainMod, Escape, exec, hyprlock"
         "$mainMod SHIFT, Escape, exec, power-menu"
         "$mainMod SHIFT, V, exec, vm-start"
@@ -202,13 +204,13 @@
         ",XF86AudioLowerVolume,exec, pamixer -d 2"
         ",XF86AudioMute,exec, pamixer -t"
         ",XF86AudioMicMute,exec, pamixer --default-source -t"
-        ",XF86AudioPlay,exec, playerctl play-pause"
-        "$mainMod, slash, exec, playerctl play-pause"
-        ",XF86AudioNext,exec, playerctl next"
-        "$mainMod, period, exec, playerctl next"
-        ",XF86AudioPrev,exec, playerctl previous"
-        "$mainMod, comma, exec, playerctl previous"
-        ",XF86AudioStop, exec, playerctl stop"
+        ",XF86AudioPlay,exec, playerctl play-pause --player=spotify play-pause"
+        "$mainMod, slash, exec, playerctl play-pause --player=spotify play-pause"
+        ",XF86AudioNext,exec, playerctl --player=spotify next"
+        "$mainMod, period, exec, playerctl --player=spotify next"
+        ",XF86AudioPrev,exec, playerctl --player=spotify previous"
+        "$mainMod, comma, exec, playerctl --player=spotify previous"
+        ",XF86AudioStop, exec, playerctl --player=spotify stop"
 
         # laptop brigthness
         ",XF86MonBrightnessUp, exec, brightnessctl set 5%+"
@@ -265,6 +267,12 @@
         "workspace special:teams silent,^(teams-for-linux)$"
         "float,title:^(Transmission)$"
         "float,udiskie"
+        "float,^(ulauncher)$"
+        "center,^(ulauncher)$"
+        "size 90% 85%,^(ulauncher)$"
+        "noborder, ^(ulauncher)$"
+        "noshadow, ^(ulauncher)$"
+        "pin, ^(ulauncher)$"
         "float,title:^(Volume Control)$"
         "float,org.gnome.NautilusPreviewer"
         "center,org.gnome.NautilusPreviewer"

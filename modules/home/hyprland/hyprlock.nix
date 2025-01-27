@@ -27,7 +27,7 @@ in
     # Time
     label {
       monitor = 
-      text = cmd[update:1000] echo "$(date +"%k:%M")"
+      text = cmd[update:1000] echo "$(date +"%-I:%M %p")"
       color = rgba(235, 219, 178, .9)
       font_size = 111
       font_family = JetBrainsMono NF Bold

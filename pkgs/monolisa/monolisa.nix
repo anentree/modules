@@ -1,4 +1,4 @@
-{ stdenv, requireFile, unzip, lib }:
+{ stdenv, requireFile, unzip, lib, ... }:
 
 stdenv.mkDerivation rec {
   name = "monolisa";
@@ -36,6 +36,6 @@ stdenv.mkDerivation rec {
       As software developers, we always strive for better tools but rarely consider font as such. Yet we spend most of our days looking at screens reading and writing code. Using a wrong font can negatively impact our productivity and lead to bugs. MonoLisa was designed by professionals to improve developers’ productivity and reduce fatigue.
     '';
     platforms = platforms.all;
-    licence = licences.unfree;
+    license = licenses.unfree;
   };
 }

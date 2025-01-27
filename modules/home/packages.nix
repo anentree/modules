@@ -7,19 +7,28 @@ in
     _2048
 
     ## personally added
+    (brave.override {
+      commandLineArgs = [
+        "--enable-features=TouchpadOverscrollHistoryNavigation"
+        "--ozone-platform=wayland"
+      ];
+    })
     deja-dup # simple backup tool
     firefox
     keyd # remaps keys. see services.nix
     libsForQt5.filelight # show disk usage and delee unused files
     libsForQt5.gwenview
     kalker # math in terminal
+    jre # for librebase to work
     mission-center # system monitor
     monitor # system monitor
     neofetch
+    obs-studio
     pdfarranger
-#    protonvpn-gui # made into flatpak
+    # protonvpn-gui # made into flatpak
     teams-for-linux
     zoom-us
+    wlogout # for shutdown hyprland bind to work
     # for disk reading
       ntfs3g
       exfat
@@ -57,6 +66,8 @@ in
     yt-dlp-light
     xdg-utils
     xxd
+    xz                                # helps compress and unzip xz files
+    p7zip                             # helps unzip strange compressed files
 
     ## GUI Apps
     bleachbit                         # cache cleaner

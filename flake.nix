@@ -1,6 +1,4 @@
 {
-  description = "FrostPhoenix's nixos configuration";
-
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     nur.url = "github:nix-community/NUR";
@@ -36,6 +34,8 @@
     };
 
     nix-flatpak.url = "github:gmodena/nix-flatpak";
+
+    # self-added
     pdfstudioFlake.url = "github:daudi/nixpkgs/pdfstudio2024b";
   };
 
