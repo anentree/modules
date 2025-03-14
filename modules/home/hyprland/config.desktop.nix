@@ -12,6 +12,11 @@
       ];
 
       bind = [
+        # keybinds
+        "$mainMod, F2, exec, pamixer -d 2" # volume down
+        "$mainMod, F3, exec, pamixer -i 2" # volume up
+        "$mainMod, F4, exec, pamixer -t" # volume mute
+
         # switch workspace
         "$mainMod, 1, workspace, 1"
         "$mainMod, 2, workspace, 2"
