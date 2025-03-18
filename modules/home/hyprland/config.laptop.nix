@@ -45,11 +45,15 @@
     extraConfig = ''
       monitor=,preferred,auto,auto
       monitor=HDMI-A-1,preferred,auto-left,auto
+      monitor=DP-1,preferred,auto-left,auto    # First USB-C port
+      monitor=DP-2,preferred,auto-right,auto    # Second USB-C port
       monitor=eDP-1,preferred,auto,auto
       
       # Workspace assignments
-      workspace=HDMI-A-1,1
       workspace=eDP-1,2
+      workspace=HDMI-A-1,1
+      workspace=DP-1-1,1
+      workspace=DP-2-1,1
       
       # Default workspace for laptop screen when HDMI is not connected
       exec-once = hyprctl dispatch workspace 1
