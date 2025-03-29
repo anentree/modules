@@ -10,7 +10,8 @@
       
       # autostart
       exec-once = [        
-        "flatpak run md.obsidian.Obsidian"
+        "flatpak run net.cozic.joplin_desktop"
+        "brave"
         "dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP &"
         "discord"
         "hash dbus-update-activation-environment 2>/dev/null &"
@@ -145,8 +146,9 @@
         "ALT, Escape, exec, swaylock"
         "ALT, Space, exec, ulauncher-toggle"
         "$mainMod ALT, 0, exec, poweroff"
-        "$mainMod, O, togglespecialworkspace, obsidian"
+        "$mainMod, O, togglespecialworkspace, joplin"
         "$mainMod, O, exec, resize-sws"
+        "$mainMod SHIFT, O, movetoworkspacesilent, special:joplin"
         "$mainMod, D, togglespecialworkspace, discord"
         "$mainMod, D, exec, resize-sws"
         "$mainMod, F, fullscreen, 1"
@@ -235,10 +237,10 @@
       windowrule = [        
         "tile,Aseprite"
         "float,audacious"
-        "float,^(obsidian)$"
-        "center,^(obsidian)$"
-        "size 90% 85%,^(obsidian)$"
-        "workspace special:obsidian silent,^(obsidian)$"
+        "float,^(joplin)$"
+        "center,^(joplin)$"
+        "size 90% 85%,^(joplin)$"
+        "workspace special:joplin silent,^(joplin)$"
         "float,Firefox — Sharing Indicator"
         "move 0 0,Firefox — Sharing Indicator"
         "float,imv"
