@@ -7,7 +7,7 @@
     packages = [
       "org.fedoraproject.MediaWriter"
       "com.github.tchx84.Flatseal"
-      "md.obsidian.Obsidian"
+      "net.cozic.joplin_desktop"
       "com.protonvpn.www"
     ];
     overrides = {
