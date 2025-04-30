@@ -4,7 +4,6 @@
     ./bootloader.nix
     ./flatpak.nix
     ./hardware.nix
-    ./libinput.nix
     ./network.nix
     ./nh.nix
     ./onedrive.nix
