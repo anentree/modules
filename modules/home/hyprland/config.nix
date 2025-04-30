@@ -29,9 +29,6 @@
         "waybar &"
         "wl-clip-persist --clipboard both"
         "wl-paste --watch cliphist store &"
-
-        ## App auto start
-        "[workspace 1 silent] floorp"
       ];
 
       input = {
@@ -146,13 +143,13 @@
         "ALT, Escape, exec, swaylock"
         "ALT, Space, exec, ulauncher-toggle"
         "$mainMod ALT, 0, exec, poweroff"
-        "$mainMod, O, togglespecialworkspace, joplin"
-        "$mainMod, O, exec, resize-sws"
-        "$mainMod SHIFT, O, movetoworkspacesilent, special:joplin"
+        "$mainMod, C, togglesplit,"
         "$mainMod, D, togglespecialworkspace, discord"
         "$mainMod, D, exec, resize-sws"
         "$mainMod, F, fullscreen, 1"
-        "$mainMod, J, togglesplit,"
+        "$mainMod, J, togglespecialworkspace, joplin"
+        "$mainMod, J, exec, resize-sws"
+        "$mainMod SHIFT, J, movetoworkspacesilent, special:joplin"
         "$mainMod, M, exec, qalculate-gtk"
         "$mainMod, N, exec, swaync-client -t -sw"
         "$mainMod SHIFT, O, exec, toggle_oppacity"
@@ -165,7 +162,7 @@
         "$mainMod, E, exec, nautilus"
         "$mainMod, Return, togglespecialworkspace, kitty"
         "$mainMod, Return, exec, resize-sws"
-        "$mainMod SHIFT, Return, exec, kitty --start-as=fullscreen -o 'font_size=16'"
+        "$mainMod SHIFT, RETURN, exec, kitty --class floatingkitty"
         "$mainMod, Space, exec, toggle_float"
         "$mainMod, Escape, exec, hyprlock"
         "$mainMod SHIFT, Escape, exec, power-menu"
@@ -254,6 +251,9 @@
         "center,^(kitty)$"
         "size 90% 85%,^(kitty)$"
         "workspace special:kitty silent,^(kitty)$"
+        "float,^(floatingkitty)$"
+        "center,^(floatingkitty)$"
+        "size 90% 85%,^(floatingkitty)$"
         "idleinhibit focus,mpv"
         "float,mpv"
         "center,mpv"

@@ -15,7 +15,7 @@
         "$mainMod, 8, workspace, 8"
         "$mainMod, 9, workspace, 9"
         "$mainMod, 0, workspace, 10"
-        "$mainMod, c, workspace, empty"
+        # "$mainMod, c, workspace, empty"
 
         # same as above, but switch to the workspace
         "$mainMod SHIFT, 1, movetoworkspace, 1" # movetoworkspace

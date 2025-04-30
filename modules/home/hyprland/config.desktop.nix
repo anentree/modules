@@ -33,7 +33,7 @@
         "$mainMod SHIFT, 4, movetoworkspace, 4"
         "$mainMod SHIFT, 5, movetoworkspace, 5"
         "$mainMod SHIFT, 6, movetoworkspace, 6"
-        "$mainMod SHIFT, c, movetoworkspace, empty"
+        # "$mainMod SHIFT, c, movetoworkspace, empty"
       ];
     };
 
