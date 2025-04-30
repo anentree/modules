@@ -3,6 +3,7 @@ let
   _2048 = pkgs.callPackage ../../pkgs/2048/default.nix {}; 
 in
 {
+  
   home.packages = (with pkgs; [
     _2048
 
@@ -15,7 +16,6 @@ in
     })
     deja-dup # simple backup tool
     firefox
-    keyd # remaps keys. see services.nix
     libsForQt5.filelight # show disk usage and delee unused files
     libsForQt5.gwenview
     kalker # math in terminal
