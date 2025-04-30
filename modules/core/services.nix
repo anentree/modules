@@ -43,5 +43,10 @@ in
       enable = true;
       drivers = [ pkgs.hplipWithPlugin ];
     };
+    udev.extraRules = ''
+      # removes sudo requirement for light
+      SUBSYSTEM=="backlight", ACTION=="add", RUN+="${pkgs.coreutils}/bin/chgrp video /sys/class/backlight/%k/brightness"
+      SUBSYSTEM=="backlight", ACTION=="add", RUN+="${pkgs.coreutils}/bin/chmod g+w /sys/class/backlight/%k/brightness"
+      '';
   };
 }
