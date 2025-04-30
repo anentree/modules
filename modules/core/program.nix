@@ -9,11 +9,11 @@
       enableSSHSupport = true;
       # pinentryFlavor = "";
     };
+    light.enable = true; # to adjust backlight. also include "video" in extraGroups in user.nix
     nix-ld = {
       enable = true;
       libraries = with pkgs; [];
     };
-    thunderbird.enable = true;
     zsh.enable = true;
   };
 }
