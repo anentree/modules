@@ -1,8 +1,4 @@
-{ pkgs, config, ... }:
-let 
-  monolisa = pkgs.callPackage ../../pkgs/monolisa/monolisa.nix {}; 
-  monolisa-nerd = pkgs.callPackage ../../pkgs/monolisa/monolisa-nerd.nix { inherit monolisa; }; 
-in
+{ pkgs, ... }:
 {
   fonts.fontconfig.enable = true;
   home.packages = with pkgs; [
@@ -13,23 +9,25 @@ in
     twemoji-color-font
     noto-fonts-emoji
     fantasque-sans-mono
-    maple-mono
-    # monolisa
-    # monolisa-nerd
+    maple-mono.truetype-autohint
   ];
 
   gtk = {
     enable = true;
     font = {
-      name = "FiraCode Nerd Font";
+      name = "Maple Mono";
       size = 12;
     };
     theme = {
-      name = "Gruvbox-Green-Dark";
-      package = pkgs.gruvbox-gtk-theme.override {
+      name = "Colloid-Green-Dark-Gruvbox";
+      package = pkgs.colloid-gtk-theme.override {
         colorVariants = [ "dark" ];
         themeVariants = [ "green" ];
-        tweakVariants = [ "macos" ];
+        tweaks = [
+          "gruvbox"
+          "rimless"
+          "float"
+        ];
       };
     };
     iconTheme = {
@@ -42,7 +40,7 @@ in
       size = 24;
     };
   };
-  
+
   home.pointerCursor = {
     name = "Bibata-Modern-Ice";
     package = pkgs.bibata-cursors;
