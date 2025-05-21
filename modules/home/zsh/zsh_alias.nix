@@ -1,9 +1,18 @@
-{ hostname, config, pkgs, host, ...}: 
+{ ... }:
 {
   programs.zsh = {
     shellAliases = {
-      # my custom alias
-      m = 'kalker "$(echo -n "$@")"' # do math with no syntax
+      # my custom aliases
+      nbuildd = "sudo nixos-rebuild switch --flake /home/neo/nixos-config#desktop --option show-trace true";
+      nbuildl = "sudo nixos-rebuild switch --flake /home/neo/nixos-config#laptop --option show-trace true";
+      ntestd = "sudo nixos-rebuild test --flake /home/neo/nixos-config#desktop --option show-trace true";
+      ntestl = "sudo nixos-rebuild test --flake /home/neo/nixos-config#laptop --option show-trace true";
+      
+      #xdg-open
+      open() {
+        xdg-open "$@"
+        exit
+      }
       
       # Utils
       c = "clear";
@@ -20,17 +29,19 @@
       icat = "kitten icat";
       dsize = "du -hs";
       pdf = "tdf";
-      open = "xdg-open";
+      # open = "xdg-open";
       space = "ncdu";
       man = "BAT_THEME='default' batman";
 
-      l = "eza --icons  -a --group-directories-first -1"; #EZA_ICON_SPACING=2
+      l = "eza --icons  -a --group-directories-first -1"; # EZA_ICON_SPACING=2
       ll = "eza --icons  -a --group-directories-first -1 --no-user --long";
       tree = "eza --icons --tree --group-directories-first";
 
       # Nixos
       cdnix = "cd ~/nixos-config && codium ~/nixos-config";
       ns = "nom-shell --run zsh";
+      nd = "nom develop --command zsh";
+      nb = "nom build";
       nix-switch = "nh os switch";
       nix-update = "nh os switch --update";
       nix-clean = "nh clean all --keep 5";
