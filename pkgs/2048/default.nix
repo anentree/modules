@@ -1,9 +1,6 @@
-#let pkgs = import <nixpkgs> {}; in
-{ stdenv, fetchFromGitHub, pkgs, ... }:
+{ stdenv, fetchFromGitHub, ... }:
 
-with pkgs;
-
-stdenv.mkDerivation rec {
+stdenv.mkDerivation {
   pname = "2048";
   version = "1.0";
 
@@ -11,7 +8,7 @@ stdenv.mkDerivation rec {
     owner = "Frost-Phoenix";
     repo = "2048-cli";
     rev = "e5b5e2b";
-    sha256 = "sha256-DqOSfKQC7WdslEknzFByZPc20AsjX6+5PwKR3gqucOM="; 
+    sha256 = "sha256-DqOSfKQC7WdslEknzFByZPc20AsjX6+5PwKR3gqucOM=";
   };
 
   buildInputs = [ ];

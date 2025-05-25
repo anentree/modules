@@ -11,8 +11,13 @@
   };
   nixpkgs = {
     overlays = [
-      inputs.nur.overlay
+      inputs.nur.overlays.default
     ];
+    config = {
+      allowUnfree = true;
+      allowUnfreePredicate = pkg:
+        builtins.elem (lib.getName pkg) [ "spotify" ];
+      };
   };
 
   environment.systemPackages = with pkgs; [
@@ -35,7 +40,6 @@
       LC_TIME = "en_US.UTF-8";
     };
   };
-  nixpkgs.config.allowUnfree = true;
   system.stateVersion = "24.05";
   
 }

@@ -3,6 +3,7 @@
   programs.zsh = {
     shellAliases = {
       # my custom aliases
+      gpush = "cd ~/nixos-config && git add . && git commit -m $(date +%F_%T) && git pull --rebase && git push";
       nbuildd = "sudo nixos-rebuild switch --flake /home/neo/nixos-config#desktop --option show-trace true";
       nbuildl = "sudo nixos-rebuild switch --flake /home/neo/nixos-config#laptop --option show-trace true";
       ntestd = "sudo nixos-rebuild test --flake /home/neo/nixos-config#desktop --option show-trace true";

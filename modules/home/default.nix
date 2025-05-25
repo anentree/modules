@@ -22,7 +22,7 @@
     ./swaylock.nix                  # lock screen
     ./swaync/swaync.nix             # notification deamon
     ./ulauncher.nix                 # better search than rofi
-    ./vscodium.nix                  # vscode forck
+    ./vscodium                      # vscode fork
     ./waybar                        # status bar
     ./xdg-mimes.nix                 # xdg config
     ./zsh/zsh.nix

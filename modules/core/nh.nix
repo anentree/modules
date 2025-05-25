@@ -10,7 +10,7 @@
   };
 
   environment.systemPackages = with pkgs; [
-    nix-output-monitor
+    nix-output-monitor # look more into this in the future. I helps with debugging.
     nvd
   ];
 

@@ -18,11 +18,12 @@
         username = "${username}";
         homeDirectory = "/home/${username}";
         stateVersion = "24.05";
-        sessionVariables = { # added for floorp to be compatible with onedrive package
-          MOZ_ENABLE_WAYLAND = "1";
-          MOZ_USE_XINPUT2 = "1";
-          XDG_CURRENT_DESKTOP = "Hyprland";
-        };
+        enableNixpkgsReleaseCheck = false; # gpt told me to add to fix mismatch versions of nixpkgs and home-manager (example: Home Manager version 25.11 and Nixpkgs version 25.05)
+        # sessionVariables = { # added for floorp to be compatible with onedrive package
+          # MOZ_ENABLE_WAYLAND = "1";
+          # MOZ_USE_XINPUT2 = "1";
+          # XDG_CURRENT_DESKTOP = "Hyprland";
+        # };
       };
     };
   };
